@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StaffMembers>
-	<Staff>
-		<Username>TA</Username>
-		<Password>Cse445!</Password>
-		<!-- You may store this as a hashed value -->
-	</Staff>
-	<!-- Additional staff members can be added here -->
+  <Staff>
+    <Username>TA</Username>
+    <Password>Cse445!</Password>
+    <!-- You may store this as a hashed value -->
+  </Staff>
+  <!-- Additional staff members can be added here -->
 </StaffMembers>

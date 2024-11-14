@@ -20,7 +20,7 @@ namespace Application
             if (IsStaffValid(username, password))
             {
                 Session["StaffUser"] = username;
-                Response.Redirect("Staff.aspx");
+                Response.Redirect("Admin.aspx"); // Redirect to Admin page instead of Staff page
             }
             else
             {
