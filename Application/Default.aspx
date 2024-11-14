@@ -122,6 +122,15 @@
                     <td>Encrypts user password for secure storage</td>
                     <td><a href="EncryptionTryIt.aspx" class="button">TryIt</a></td>
                 </tr>
+                    <tr>
+                    <td>Member C</td>
+                    <td>WSDL Service</td>
+                    <td>BookFlight</td>
+                    <td>BookFlightFunctio(int, string, string);</td>
+                    <td>Strings</td>
+                    <td>Books a flight</td>
+                    <td><a href="BookFlight.aspx" class="button">TryIt</a></td>
+                </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>
 

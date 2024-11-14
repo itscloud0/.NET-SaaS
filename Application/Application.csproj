@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,12 +70,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BookFlight.aspx" />
+    <Content Include="BookFlightService\BookFlight.svc" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Staff.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookFlight.aspx.cs">
+      <DependentUpon>BookFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookFlight.aspx.designer.cs">
+      <DependentUpon>BookFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookFlightService\BookFlight.svc.cs">
+      <DependentUpon>BookFlight.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -80,6 +107,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookFlightService\IBookFlight.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,6 +118,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,6 +132,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BookFlightServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
