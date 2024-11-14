@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookFlight.aspx.cs" Inherits="Application.BookFlight1" %> 
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserCount.aspx.cs" Inherits="Application.WebForm1" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Book Flight - Travel Booking Application</title>
+    <title>Display Active User Count</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,12 +53,12 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <h2>Book Flight</h2>
-            <asp:TextBox ID="txtTime" runat="server" CssClass="input-field" Placeholder="Select Time" TextMode="Time"></asp:TextBox>
-            <asp:TextBox ID="txtDepart" runat="server" CssClass="input-field" MaxLength="3" Placeholder="From (EX: LAX)"></asp:TextBox>
-            <asp:TextBox ID="txtArrival" runat="server" CssClass="input-field" MaxLength="3" Placeholder="To (EX: ATL)"></asp:TextBox>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="button" Text="Book Flight" OnClick="btnSubmit_Click" />
-            <asp:Label ID="lblResult" runat="server" CssClass="result-message" />
+            <h2>Active User Count</h2>
+            <asp:Label ID="lblStatus" CssClass="status-label" runat="server" Text="Not logged in" />
+            <p>Open another web browser (e.g. Firefox, Safari, Google Chrome Incognito)</p>
+            <p>Enter the url 'https://localhost:44306/UserCount.aspx' to increment the active user count.</p>
+            <p>Refresh the page if the update is not being reflected.</p>
+            <p>The active user count will only decrement after 1 minute of inactivity</p>
         </div>
     </form>
 </body>

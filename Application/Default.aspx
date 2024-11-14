@@ -18,6 +18,7 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
         h1, h2 {
             color: #4a90e2;
@@ -44,6 +45,7 @@
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
+            table-layout: fixed; /* Ensures the table fits within the container */
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -51,6 +53,7 @@
         th, td {
             padding: 12px;
             text-align: center;
+            word-wrap: break-word; /* Wraps long text within cells */
         }
         th {
             background-color: #4a90e2;
@@ -123,13 +126,22 @@
                     <td><a href="EncryptionTryIt.aspx" class="button">TryIt</a></td>
                 </tr>
                     <tr>
-                    <td>Member C</td>
+                    <td>Cole Eastman</td>
                     <td>WSDL Service</td>
-                    <td>BookFlight</td>
-                    <td>BookFlightFunctio(int, string, string);</td>
-                    <td>Strings</td>
+                    <td>BookFlightFunction</td>
+                    <td>BookFlightFunction (int, string, string)</td>
+                    <td>String</td>
                     <td>Books a flight</td>
                     <td><a href="BookFlight.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Cole Eastman</td>
+                    <td>Global.aspx</td>
+                    <td>Session_Start, Session_End</td>
+                    <td>None</td>
+                    <td>Integer</td>
+                    <td>Displays the current count of active users</td>
+                    <td><a href="UserCount.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>
