@@ -70,12 +70,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Services\BookFlight.aspx" />
-    <Content Include="Services\BookFlightService\BookFlight.svc" />
-    <Content Include="Services\BookHotel.aspx" />
-    <Content Include="Services\BookHotelService\HotelBookingService.svc" />
-    <Content Include="Services\BookHotelService\Hotels.xml" />
-    <Content Include="LocalComponents\UserCount.aspx" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
     <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
@@ -83,13 +84,47 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Connected Services\HotelBookingServiceReference\Application.HotelBookingServiceReference.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.disco" />
+    <None Include="Connected Services\HotelBookingServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\HotelBookingServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\HotelBookingServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Services\BookFlight.aspx" />
+    <Content Include="Services\BookFlightService\BookFlight.svc" />
+    <Content Include="Services\BookHotel.aspx" />
+    <Content Include="Services\BookHotelService\HotelBookingService.svc" />
+    <Content Include="Services\BookHotelService\Hotels.xml" />
+    <Content Include="LocalComponents\UserCount.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="LocalComponents\Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Services\BookHotelService\Reservations.xml" />
     <Content Include="Staff.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\HotelBookingServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BookFlight.aspx.cs">
+      <DependentUpon>BookFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\BookFlight.aspx.designer.cs">
+      <DependentUpon>BookFlight.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services\BookFlightService\BookFlight.svc.cs">
       <DependentUpon>BookFlight.svc</DependentUpon>
     </Compile>
@@ -103,11 +138,6 @@
     <Compile Include="Services\BookHotelService\IHotelBookingService.cs" />
     <Compile Include="Services\BookHotelService\HotelBookingService.svc.cs">
       <DependentUpon>HotelBookingService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -137,11 +167,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.wsdl" />
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -157,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\BookFlightServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\HotelBookingServiceReference\" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

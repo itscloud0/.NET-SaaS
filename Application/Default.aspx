@@ -108,22 +108,22 @@
                     <th>TryIt Link</th>
                 </tr>
                 <tr>
-                    <td>Member A</td>
+                    <td>Ilia Sorokin</td>
                     <td>WSDL Service</td>
-                    <td>GetFlightInfo</td>
-                    <td>FlightID (int)</td>
-                    <td>Flight Details</td>
-                    <td>Fetches information about a specific flight</td>
-                    <td><a href="FlightTryIt.aspx" class="button">TryIt</a></td>
+                    <td>SearchHotels</td>
+                    <td>city (string), startDate (DateTime), endDate (DateTime)</td>
+                    <td>List&lt;Hotel&gt;</td>
+                    <td>Searches for available hotels in a specified city for given dates</td>
+                    <td><a href="Services/BookHotel.aspx" class="button">TryIt</a></td>
                 </tr>
                 <tr>
-                    <td>Member B</td>
-                    <td>DLL Function</td>
-                    <td>EncryptPassword</td>
-                    <td>Password (string)</td>
-                    <td>Encrypted string</td>
-                    <td>Encrypts user password for secure storage</td>
-                    <td><a href="EncryptionTryIt.aspx" class="button">TryIt</a></td>
+                    <td>Ilia Sorokin</td>
+                    <td>WSDL Service</td>
+                    <td>BookHotel</td>
+                    <td>hotelName (string), startDate (DateTime), endDate (DateTime), customerName (string)</td>
+                    <td>String</td>
+                    <td>Books a hotel room for a customer within specified dates</td>
+                    <td><a href="Services/BookHotel.aspx" class="button">TryIt</a></td>
                 </tr>
                     <tr>
                     <td>Cole Eastman</td>
@@ -132,16 +132,16 @@
                     <td>BookFlightFunction (int, string, string)</td>
                     <td>String</td>
                     <td>Books a flight</td>
-                    <td><a href="BookFlight.aspx" class="button">TryIt</a></td>
+                    <td><a href="Services/BookFlight.aspx" class="button">TryIt</a></td>
                 </tr>
                 <tr>
                     <td>Cole Eastman</td>
-                    <td>Global.aspx</td>
+                    <td>Global.asax</td>
                     <td>Session_Start, Session_End</td>
                     <td>None</td>
                     <td>Integer</td>
                     <td>Displays the current count of active users</td>
-                    <td><a href="UserCount.aspx" class="button">TryIt</a></td>
+                    <td><a href="LocalComponents/UserCount.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>
