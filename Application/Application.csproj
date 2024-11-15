@@ -70,9 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BookFlight.aspx" />
-    <Content Include="BookFlightService\BookFlight.svc" />
-    <Content Include="UserCount.aspx" />
+    <Content Include="Services\BookFlight.aspx" />
+    <Content Include="Services\BookFlightService\BookFlight.svc" />
+    <Content Include="Services\BookHotel.aspx" />
+    <Content Include="Services\BookHotelService\HotelBookingService.svc" />
+    <Content Include="Services\BookHotelService\Hotels.xml" />
+    <Content Include="LocalComponents\UserCount.aspx" />
     <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
     <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
@@ -81,21 +84,25 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Default.aspx" />
-    <Content Include="Global.asax" />
+    <Content Include="LocalComponents\Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Staff.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookFlight.aspx.cs">
-      <DependentUpon>BookFlight.aspx</DependentUpon>
+    <Compile Include="Services\BookFlightService\BookFlight.svc.cs">
+      <DependentUpon>BookFlight.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BookHotel.aspx.cs">
+      <DependentUpon>BookHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BookFlight.aspx.designer.cs">
-      <DependentUpon>BookFlight.aspx</DependentUpon>
+    <Compile Include="Services\BookHotel.aspx.designer.cs">
+      <DependentUpon>BookHotel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BookFlightService\BookFlight.svc.cs">
-      <DependentUpon>BookFlight.svc</DependentUpon>
+    <Compile Include="Services\BookHotelService\IHotelBookingService.cs" />
+    <Compile Include="Services\BookHotelService\HotelBookingService.svc.cs">
+      <DependentUpon>HotelBookingService.svc</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -109,8 +116,8 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BookFlightService\IBookFlight.cs" />
-    <Compile Include="Global.asax.cs">
+    <Compile Include="Services\BookFlightService\IBookFlight.cs" />
+    <Compile Include="LocalComponents\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -121,11 +128,11 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserCount.aspx.cs">
+    <Compile Include="LocalComponents\UserCount.aspx.cs">
       <DependentUpon>UserCount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserCount.aspx.designer.cs">
+    <Compile Include="LocalComponents\UserCount.aspx.designer.cs">
       <DependentUpon>UserCount.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -151,6 +158,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\BookFlightServiceReference\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

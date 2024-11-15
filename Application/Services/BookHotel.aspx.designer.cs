@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class BookFlight1
+    public partial class BookHotel
     {
 
         /// <summary>
@@ -24,31 +24,22 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtTime control.
+        /// txtCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTime;
+        protected global::System.Web.UI.WebControls.TextBox txtCity;
 
         /// <summary>
-        /// txtDepart control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDepart;
-
-        /// <summary>
-        /// txtArrival control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArrival;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
         /// btnSubmit control.
