@@ -69,31 +69,13 @@ namespace Application
         protected global::System.Web.UI.WebControls.Button btnShowDelete;
 
         /// <summary>
-        /// pnlDeleteStaff control.
+        /// DeleteConfirmationControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDeleteStaff;
-
-        /// <summary>
-        /// txtDeleteUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteUsername;
-
-        /// <summary>
-        /// btnDeleteStaff control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteStaff;
+        protected global::Application.Controls.DeleteConfirmation DeleteConfirmationControl;
 
         /// <summary>
         /// btnBackToLogin control.

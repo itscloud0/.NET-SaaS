@@ -5,22 +5,24 @@ using System.Xml.Linq;
 
 namespace Application
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class Admin : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             // Check if the user is logged in as a staff member
             if (Session["StaffUser"] == null)
             {
-                // Redirect to the login page if not logged in
                 Response.Redirect("Login.aspx");
             }
+
+            // Subscribe to the DeleteConfirmed event of the DeleteConfirmationControl
+            DeleteConfirmationControl.DeleteConfirmed += DeleteStaffMember;
         }
 
         protected void btnAddStaff_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
@@ -30,28 +32,36 @@ namespace Application
 
             try
             {
-                // Load the XML file
-                var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                // Check if username or password exists in Member.xml
+                var memberDoc = XDocument.Load(Server.MapPath("~/Member.xml"));
+                bool memberExists = memberDoc.Descendants("Members")
+                    .Any(m => (string)m.Element("Username") == username || (string)m.Element("Password") == password);
 
-                // Check if the username already exists
-                bool userExists = doc.Descendants("Staff")
+                if (memberExists)
+                {
+                    lblMessage.Text = "The username or password already exists in Member records.";
+                    return;
+                }
+
+                // Load Staff.xml and check if username already exists
+                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                bool userExists = staffDoc.Descendants("Staff")
                     .Any(s => (string)s.Element("Username") == username);
 
                 if (userExists)
                 {
-                    lblMessage.Text = "This username already exists.";
+                    lblMessage.Text = "This username already exists in Staff records.";
                     return;
                 }
 
-                // Create a new staff entry
+                // Add the new staff member
                 XElement newStaff = new XElement("Staff",
                     new XElement("Username", username),
-                    new XElement("Password", password) // Consider hashing here for security
+                    new XElement("Password", password) // Consider hashing for security
                 );
 
-                // Add the new entry and save the XML file
-                doc.Root.Add(newStaff);
-                doc.Save(Server.MapPath("~/Staff.xml"));
+                staffDoc.Root.Add(newStaff);
+                staffDoc.Save(Server.MapPath("~/Staff.xml"));
 
                 lblMessage.Text = "Staff member added successfully!";
                 txtUsername.Text = "";
@@ -63,22 +73,8 @@ namespace Application
             }
         }
 
-        protected void btnShowDelete_Click(object sender, EventArgs e)
+        private void DeleteStaffMember(object sender, string usernameToDelete)
         {
-            // Show the panel with the delete text box and confirm button
-            pnlDeleteStaff.Visible = true;
-        }
-
-        protected void btnDeleteStaff_Click(object sender, EventArgs e)
-        {
-            string usernameToDelete = txtDeleteUsername.Text;
-
-            if (string.IsNullOrWhiteSpace(usernameToDelete))
-            {
-                lblMessage.Text = "Please enter a username to delete.";
-                return;
-            }
-
             if (usernameToDelete == "TA")
             {
                 lblMessage.Text = "You cannot delete the TA account.";
@@ -87,21 +83,17 @@ namespace Application
 
             try
             {
-                // Load the XML file
                 var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
 
-                // Find the staff member element to delete
                 var staffToDelete = doc.Descendants("Staff")
                                        .FirstOrDefault(s => (string)s.Element("Username") == usernameToDelete);
 
                 if (staffToDelete != null)
                 {
-                    // Remove the staff member and save the XML file
                     staffToDelete.Remove();
                     doc.Save(Server.MapPath("~/Staff.xml"));
 
                     lblMessage.Text = $"Staff member '{usernameToDelete}' deleted successfully.";
-                    txtDeleteUsername.Text = "";
                 }
                 else
                 {
@@ -116,7 +108,6 @@ namespace Application
 
         protected void btnBackToLogin_Click(object sender, EventArgs e)
         {
-            // Redirect back to the Login page
             Response.Redirect("Login.aspx");
         }
 
@@ -126,7 +117,6 @@ namespace Application
             {
                 var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
 
-                // Retrieve all staff usernames
                 var staffList = doc.Descendants("Staff")
                                    .Select(s => (string)s.Element("Username"))
                                    .ToList();

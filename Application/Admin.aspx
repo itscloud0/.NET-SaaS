@@ -1,10 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Application.Admin" %>
+<%@ Register Src="~/DeleteConfirmation.ascx" TagPrefix="uc" TagName="DeleteConfirmation" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Admin - Manage Staff Members</title>
     <style>
+        /* Main Page Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f2f5;
@@ -51,6 +53,42 @@
             text-align: left;
             margin-top: 20px;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -64,14 +102,18 @@
             <asp:TextBox ID="txtPassword" runat="server" CssClass="input-field" TextMode="Password" Placeholder="Password"></asp:TextBox><br />
             <asp:Button ID="btnAddStaff" runat="server" CssClass="button" Text="Add Staff" OnClick="btnAddStaff_Click" /><br />
 
-            <!-- Show Delete Staff Member Text Box Button -->
-            <asp:Button ID="btnShowDelete" runat="server" CssClass="button" Text="Delete Staff Member" OnClick="btnShowDelete_Click" /><br />
+            <!-- Button to Open Modal -->
+            <asp:Button ID="btnShowDelete" runat="server" CssClass="button" Text="Delete Staff Member" OnClientClick="openModal(); return false;" />
 
-            <!-- Delete Staff Member Panel (Initially Hidden) -->
-            <asp:Panel ID="pnlDeleteStaff" runat="server" Visible="false">
-                <asp:TextBox ID="txtDeleteUsername" runat="server" CssClass="input-field" Placeholder="Enter Username to Delete"></asp:TextBox><br />
-                <asp:Button ID="btnDeleteStaff" runat="server" CssClass="button" Text="Confirm Delete" OnClick="btnDeleteStaff_Click" /><br />
-            </asp:Panel>
+            <!-- Modal Structure -->
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Delete Staff Member</h3>
+                    <!-- Include DeleteConfirmation User Control in Modal -->
+                    <uc:DeleteConfirmation ID="DeleteConfirmationControl" runat="server" />
+                </div>
+            </div>
 
             <!-- Navigation Buttons -->
             <asp:Button ID="btnBackToLogin" runat="server" CssClass="button" Text="Back to Login" OnClick="btnBackToLogin_Click" /><br />
@@ -83,5 +125,25 @@
             </div>
         </div>
     </form>
+
+    <script type="text/javascript">
+        // JavaScript to open the modal
+        function openModal() {
+            document.getElementById("deleteModal").style.display = "block";
+        }
+
+        // JavaScript to close the modal
+        function closeModal() {
+            document.getElementById("deleteModal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+            var modal = document.getElementById("deleteModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

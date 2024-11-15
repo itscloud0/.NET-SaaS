@@ -81,7 +81,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Default.aspx" />
+    <Content Include="DeleteConfirmation.ascx" />
     <Content Include="Login.aspx" />
+    <Content Include="Member.xml" />
     <Content Include="Staff.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -116,6 +118,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="BookFlightService\IBookFlight.cs" />
+    <Compile Include="DeleteConfirmation.ascx.cs">
+      <DependentUpon>DeleteConfirmation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteConfirmation.ascx.designer.cs">
+      <DependentUpon>DeleteConfirmation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
