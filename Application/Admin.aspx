@@ -110,13 +110,13 @@
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <h3>Delete Staff Member</h3>
-                    <!-- Include DeleteConfirmation User Control in Modal -->
                     <uc:DeleteConfirmation ID="DeleteConfirmationControl" runat="server" />
                 </div>
             </div>
 
             <!-- Navigation Buttons -->
-            <asp:Button ID="btnBackToLogin" runat="server" CssClass="button" Text="Back to Login" OnClick="btnBackToLogin_Click" /><br />
+            <asp:Button ID="btnLogOut" runat="server" CssClass="button" Text="Log Out" OnClick="btnLogOut_Click" /><br />
+            <asp:Button ID="btnHomePage" runat="server" CssClass="button" Text="Go to Home Page" OnClick="btnGoToDefault_Click" /><br />
             <asp:Button ID="btnViewAllStaff" runat="server" CssClass="button" Text="View All Staff Members" OnClick="btnViewAllStaff_Click" />
 
             <!-- List of all staff members -->
@@ -127,23 +127,18 @@
     </form>
 
     <script type="text/javascript">
-        // JavaScript to open the modal
         function openModal() {
             document.getElementById("deleteModal").style.display = "block";
         }
-
-        // JavaScript to close the modal
         function closeModal() {
             document.getElementById("deleteModal").style.display = "none";
         }
-
-        // Close the modal when clicking outside of it
         window.onclick = function (event) {
             var modal = document.getElementById("deleteModal");
             if (event.target == modal) {
-                modal.style.display = "none";
+                closeModal();
             }
-        }
+        };
     </script>
 </body>
 </html>

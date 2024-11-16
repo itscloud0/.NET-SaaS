@@ -1,30 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Application
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if the user is logged in
-            if (Session["LoggedInUser"] != null)
+            if (!IsPostBack)
             {
-                lblStatus.Text = "Logged in as: " + Session["LoggedInUser"];
-            }
-            else
-            {
-                lblStatus.Text = "Not logged in";
+                UpdateLoginStatus();
             }
         }
 
         protected void GoToMemberPage(object sender, EventArgs e)
         {
-            // Redirect to Login page if not logged in
             if (Session["LoggedInUser"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -37,14 +27,35 @@ namespace Application
 
         protected void GoToStaffPage(object sender, EventArgs e)
         {
-            // Redirect to Login page if not logged in as staff
             if (Session["StaffUser"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
             else
             {
-                Response.Redirect("Staff.aspx");
+                Response.Redirect("Admin.aspx");
+            }
+        }
+
+        protected void Logout(object sender, EventArgs e)
+        {
+            Session.Clear(); // Clear all session data
+            UpdateLoginStatus(); // Update the status label
+        }
+
+        private void UpdateLoginStatus()
+        {
+            if (Session["LoggedInUser"] != null)
+            {
+                lblStatus.Text = $"Logged in as: {Session["LoggedInUser"]}";
+            }
+            else if (Session["StaffUser"] != null)
+            {
+                lblStatus.Text = $"Logged in as Staff: {Session["StaffUser"]}";
+            }
+            else
+            {
+                lblStatus.Text = "Not logged in";
             }
         }
     }

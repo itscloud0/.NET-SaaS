@@ -90,6 +90,7 @@
             <div>
                 <asp:Button ID="btnMemberPage" CssClass="button" runat="server" Text="Member Page" OnClick="GoToMemberPage" />
                 <asp:Button ID="btnStaffPage" CssClass="button" runat="server" Text="Staff Page" OnClick="GoToStaffPage" />
+                <asp:Button ID="btnLogout" CssClass="button" runat="server" Text="Log Out" OnClick="Logout" />
             </div>
 
             <!-- Service Directory Table -->
@@ -122,7 +123,7 @@
                     <td>Encrypts user password for secure storage</td>
                     <td><a href="EncryptionTryIt.aspx" class="button">TryIt</a></td>
                 </tr>
-                    <tr>
+                <tr>
                     <td>Member C</td>
                     <td>WSDL Service</td>
                     <td>BookFlight</td>

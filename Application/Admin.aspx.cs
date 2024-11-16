@@ -32,35 +32,16 @@ namespace Application
 
             try
             {
-                // Check if username or password exists in Member.xml
-                var memberDoc = XDocument.Load(Server.MapPath("~/Member.xml"));
-                bool memberExists = memberDoc.Descendants("Members")
-                    .Any(m => (string)m.Element("Username") == username || (string)m.Element("Password") == password);
-
-                if (memberExists)
-                {
-                    lblMessage.Text = "The username or password already exists in Member records.";
-                    return;
-                }
-
-                // Load Staff.xml and check if username already exists
                 var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
-                bool userExists = staffDoc.Descendants("Staff")
-                    .Any(s => (string)s.Element("Username") == username);
-
-                if (userExists)
+                if (staffDoc.Descendants("Staff").Any(s => (string)s.Element("Username") == username))
                 {
                     lblMessage.Text = "This username already exists in Staff records.";
                     return;
                 }
 
-                // Add the new staff member
-                XElement newStaff = new XElement("Staff",
+                staffDoc.Root.Add(new XElement("Staff",
                     new XElement("Username", username),
-                    new XElement("Password", password) // Consider hashing for security
-                );
-
-                staffDoc.Root.Add(newStaff);
+                    new XElement("Password", password)));
                 staffDoc.Save(Server.MapPath("~/Staff.xml"));
 
                 lblMessage.Text = "Staff member added successfully!";
@@ -69,7 +50,7 @@ namespace Application
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Error: " + ex.Message;
+                lblMessage.Text = $"Error: {ex.Message}";
             }
         }
 
@@ -83,16 +64,14 @@ namespace Application
 
             try
             {
-                var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
-
-                var staffToDelete = doc.Descendants("Staff")
-                                       .FirstOrDefault(s => (string)s.Element("Username") == usernameToDelete);
+                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                var staffToDelete = staffDoc.Descendants("Staff")
+                    .FirstOrDefault(s => (string)s.Element("Username") == usernameToDelete);
 
                 if (staffToDelete != null)
                 {
                     staffToDelete.Remove();
-                    doc.Save(Server.MapPath("~/Staff.xml"));
-
+                    staffDoc.Save(Server.MapPath("~/Staff.xml"));
                     lblMessage.Text = $"Staff member '{usernameToDelete}' deleted successfully.";
                 }
                 else
@@ -102,38 +81,36 @@ namespace Application
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Error deleting staff member: " + ex.Message;
+                lblMessage.Text = $"Error: {ex.Message}";
             }
         }
 
-        protected void btnBackToLogin_Click(object sender, EventArgs e)
+        protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Session.Clear(); // Clear session data
+            Response.Redirect("Default.aspx"); // Redirect to Default.aspx
+        }
+
+        protected void btnGoToDefault_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
 
         protected void btnViewAllStaff_Click(object sender, EventArgs e)
         {
             try
             {
-                var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                var staffList = staffDoc.Descendants("Staff")
+                    .Select(s => (string)s.Element("Username")).ToList();
 
-                var staffList = doc.Descendants("Staff")
-                                   .Select(s => (string)s.Element("Username"))
-                                   .ToList();
-
-                if (staffList.Any())
-                {
-                    lblStaffList.Text = "<strong>Staff Members:</strong><br />" +
-                        string.Join("<br />", staffList);
-                }
-                else
-                {
-                    lblStaffList.Text = "No staff members found.";
-                }
+                lblStaffList.Text = staffList.Any()
+                    ? "<strong>Staff Members:</strong><br />" + string.Join("<br />", staffList)
+                    : "No staff members found.";
             }
             catch (Exception ex)
             {
-                lblStaffList.Text = "Error loading staff list: " + ex.Message;
+                lblStaffList.Text = $"Error: {ex.Message}";
             }
         }
     }
