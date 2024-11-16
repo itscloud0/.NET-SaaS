@@ -142,6 +142,7 @@
     <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="GenerateCaptchaImage.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
