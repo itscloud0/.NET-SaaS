@@ -93,17 +93,19 @@ namespace Application
         {
             try
             {
+                // Validate customer name input
                 if (string.IsNullOrEmpty(txtCustomerName.Text))
                 {
-                    lblError.Text = "Please enter your name.";
-                    return;
+                    lblError.Text = "Please enter your name.";  // Show error if name is not entered
+                    return;  // Prevent further execution and stop page reload
                 }
 
+                // Extract the necessary data from ViewState
                 string selectedHotel = ViewState["SelectedHotel"].ToString();
                 DateTime startDate = (DateTime)ViewState["StartDate"];
                 DateTime endDate = (DateTime)ViewState["EndDate"];
 
-                // Book the hotel
+                // Call the service to confirm the booking
                 string result = bookingService.BookHotel(
                     selectedHotel,
                     startDate,
@@ -111,17 +113,23 @@ namespace Application
                     txtCustomerName.Text
                 );
 
-                // Clear the form and show success message
-                lblError.Text = result;
-                pnlBooking.Visible = false;
+                // Check the result from booking
+                if (!string.IsNullOrEmpty(result))
+                {
+                    // Show confirmation message
+                    lblError.Text = "Your booking has been confirmed for " + selectedHotel + " from " + startDate.ToShortDateString() + " to " + endDate.ToShortDateString();
+                    pnlBooking.Visible = false;  // Hide the booking panel after confirmation
+                }
+
+                // Clear the form inputs
                 txtCustomerName.Text = string.Empty;
 
-                // Refresh the hotel list
+                // Optionally, refresh the hotel list if needed
                 btnSearch_Click(sender, e);
             }
             catch (Exception ex)
             {
-                lblError.Text = "Booking Error: " + ex.Message;
+                lblError.Text = "Booking Error: " + ex.Message;  // Display any exception message
             }
         }
 

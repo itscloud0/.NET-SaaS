@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.LocalComponents;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -40,6 +41,13 @@ namespace Application
                     {
                         bookedHotels.Add(hotelName);  // Mark hotel as booked
                     }
+
+                    // Decrypt customer name before displaying
+                    string encryptedCustomerName = reservationNode.SelectSingleNode("CustomerName").InnerText;
+                    string decryptedCustomerName = EncDec.Decrypt(encryptedCustomerName);
+
+                    // You can store or display the decrypted customer name if needed
+                    Console.WriteLine($"Customer: {decryptedCustomerName}");
                 }
 
                 // Now, filter hotels based on the city and availability
@@ -85,6 +93,9 @@ namespace Application
         {
             try
             {
+                // Encrypt the customer name before storing it
+                string encryptedCustomerName = EncDec.Encrypt(customerName);
+
                 // Load reservation data from Reservations.xml
                 XmlDocument reservationDoc = new XmlDocument();
                 reservationDoc.Load(HttpContext.Current.Server.MapPath("~/Services/BookHotelService/Reservations.xml"));
@@ -105,7 +116,7 @@ namespace Application
                 reservationNode.AppendChild(endDateNode);
 
                 XmlNode customerNode = reservationDoc.CreateElement("CustomerName");
-                customerNode.InnerText = customerName;
+                customerNode.InnerText = encryptedCustomerName; // Store encrypted customer name
                 reservationNode.AppendChild(customerNode);
 
                 // Append the reservation to the XML document

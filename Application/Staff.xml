@@ -6,8 +6,4 @@
     <!-- You may store this as a hashed value -->
   </Staff>
   <!-- Additional staff members can be added here -->
-  <Staff>
-    <Username>cmharr27</Username>
-    <Password>1234</Password>
-  </Staff>
 </StaffMembers>
