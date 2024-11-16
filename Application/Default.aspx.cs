@@ -44,7 +44,7 @@ namespace Application
             }
             else
             {
-                Response.Redirect("Staff.aspx");
+                Response.Redirect("Admin.aspx");
             }
         }
     }
