@@ -13,6 +13,22 @@ namespace Application
             }
         }
 
+        private void UpdateLoginStatus()
+        {
+            if (Session["LoggedInUser"] != null)
+            {
+                lblStatus.Text = $"Logged in as: {Session["LoggedInUser"]}";
+            }
+            else if (Session["StaffUser"] != null)
+            {
+                lblStatus.Text = $"Logged in as Staff: {Session["StaffUser"]}";
+            }
+            else
+            {
+                lblStatus.Text = "Not logged in";
+            }
+        }
+
         protected void GoToMemberPage(object sender, EventArgs e)
         {
             if (Session["LoggedInUser"] == null)

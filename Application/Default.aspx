@@ -93,7 +93,6 @@
             <div>
                 <asp:Button ID="btnMemberPage" CssClass="button" runat="server" Text="Member Page" OnClick="GoToMemberPage" />
                 <asp:Button ID="btnStaffPage" CssClass="button" runat="server" Text="Staff Page" OnClick="GoToStaffPage" />
-                <asp:Button ID="btnLogout" CssClass="button" runat="server" Text="Log Out" OnClick="Logout" />
             </div>
 
             <!-- Service Directory Table -->
@@ -143,6 +142,24 @@
                     <td>Integer</td>
                     <td>Displays the current count of active users</td>
                     <td><a href="LocalComponents/UserCount.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Chris Harris</td>
+                    <td>Login Window</td>
+                    <td>User Authentication</td>
+                    <td>Username, Password</td>
+                    <td>String</td>
+                    <td>Login page for user authentication</td>
+                    <td><a href="Login.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Chris Harris</td>
+                    <td>Session Management</td>
+                    <td>User Profile Management</td>
+                    <td>User ID</td>
+                    <td>String</td>
+                    <td>Page for managing user profile and temporary states using cookies and sessions</td>
+                    <td><a href="UserProfile.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>
