@@ -7,6 +7,7 @@ using System.Web.SessionState;
 
 namespace Application
 {
+    // Developed by Cole Eastman
     public class Global : System.Web.HttpApplication
     {
 
@@ -17,19 +18,21 @@ namespace Application
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            // lock application state to increment user count
+            // Lock application state to increment user count
             Application.Lock();
 
+            // If no active users, initialize to 1
             if (Application["ActiveUsers"] == null)
             {
                 Application["ActiveUsers"] = 1;
             }
             else
             {
+                // Increment the active user count
                 Application["ActiveUsers"] = (int)Application["ActiveUsers"] + 1;
             }
 
-            // unlock application state
+            // Unlock application state
             Application.UnLock();
         }
 
@@ -50,16 +53,16 @@ namespace Application
 
         protected void Session_End(object sender, EventArgs e)
         {
-            // lock application state to decrement the user count
+            // Lock application state to decrement the user count
             Application.Lock();
 
-            // decrement the active user count
+            // Decrement the active user count
             if (Application["ActiveUsers"] != null)
             {
                 Application["ActiveUsers"] = (int)Application["ActiveUsers"] - 1;
             }
 
-            // unlock the application state
+            // Unlock application state
             Application.UnLock();
         }
 

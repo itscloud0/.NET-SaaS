@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Developed by Cole Eastman
+// This WCF service provides functionality to book flights, verifying valid departure and arrival airport codes.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -11,9 +14,10 @@ namespace Application
     // NOTE: In order to launch WCF Test Client for testing this service, please select BookFlight.svc or BookFlight.svc.cs at the Solution Explorer and start debugging.
     public class BookFlight : IBookFlight
     {
-        // List of valid IATA codes for US airports (locations)
+        // List of valid IATA codes for US airports (locations).
         private static readonly HashSet<string> ValidLocations = new HashSet<string>
         {
+            // IATA airport codes for major US airports.
             "ATL", "LAX", "ORD", "DFW", "DEN", "JFK", "SFO", "SEA", "LAS", "MCO",
             "MIA", "CLT", "PHX", "IAH", "HOU", "BOS", "MSP", "FLL", "DTW", "PHL", "BWI",
             "SLC", "SAN", "DCA", "IAD", "HNL", "STL", "PDX", "TPA", "SJC", "BNA", "OAK",
@@ -26,18 +30,22 @@ namespace Application
             "SHV", "FWA", "TOL", "ISP"
         };
 
+        // Method to book a flight, verifying the validity of departure and arrival airport codes.
         public string BookFlightFunction(int time, string depart, string arrival)
         {
+            // Check if the departure location is a valid IATA code.
             if (!ValidLocations.Contains(depart.ToUpper()))
             {
-                return $"Error: '{depart}' is not a valid location.";
+                return $"Error: '{depart}' is not a valid location."; // Return an error message if invalid.
             }
 
+            // Check if the arrival location is a valid IATA code.
             if (!ValidLocations.Contains(arrival.ToUpper()))
             {
-                return $"Error: '{arrival}' is not a valid location.";
+                return $"Error: '{arrival}' is not a valid location."; // Return an error message if invalid.
             }
 
+            // If both locations are valid, return a success message.
             return "Flight Booked Successfully!";
         }
     }

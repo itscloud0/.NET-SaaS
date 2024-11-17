@@ -1,4 +1,8 @@
-﻿using EncryptionDecryption;
+﻿// Developed by Ilia Sorokin
+// This WCF service allows users to search for hotels and book reservations. 
+// It integrates encryption and decryption for sensitive customer data.
+
+using EncryptionDecryption;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +14,28 @@ namespace Application
 {
     public class HotelBookingService : IHotelBookingService
     {
+        // Method to search for hotels by city and date range
         public List<Hotel> SearchHotels(string city, DateTime startDate, DateTime endDate)
         {
             List<Hotel> availableHotels = new List<Hotel>();
 
             try
             {
-                // Load hotels data from Hotels.xml
+                // Load hotel data from the Hotels.xml file
                 XmlDocument hotelDoc = new XmlDocument();
                 hotelDoc.Load(HttpContext.Current.Server.MapPath("~/Services/BookHotelService/Hotels.xml"));
 
+                // Retrieve hotel nodes from the XML document
                 XmlNodeList hotelNodes = hotelDoc.GetElementsByTagName("Hotel");
 
-                // Load reservation data from Reservations.xml
+                // Load reservation data from the Reservations.xml file
                 XmlDocument reservationDoc = new XmlDocument();
                 reservationDoc.Load(HttpContext.Current.Server.MapPath("~/Services/BookHotelService/Reservations.xml"));
 
+                // Retrieve reservation nodes from the XML document
                 XmlNodeList reservationNodes = reservationDoc.GetElementsByTagName("Reservation");
 
-                // Collect all booked hotels for the specific date range
+                // Create a set to track hotels that are already booked for the specified date range
                 HashSet<string> bookedHotels = new HashSet<string>();
                 foreach (XmlNode reservationNode in reservationNodes)
                 {
@@ -36,34 +43,34 @@ namespace Application
                     DateTime reservationStartDate = DateTime.Parse(reservationNode.SelectSingleNode("StartDate").InnerText);
                     DateTime reservationEndDate = DateTime.Parse(reservationNode.SelectSingleNode("EndDate").InnerText);
 
-                    // Check if the reservation overlaps with the search dates
+                    // Check for overlap between reservation and search dates
                     if ((startDate <= reservationEndDate) && (endDate >= reservationStartDate))
                     {
-                        bookedHotels.Add(hotelName);  // Mark hotel as booked
+                        bookedHotels.Add(hotelName); // Add hotel to the booked list
                     }
 
-                    // Decrypt customer name before displaying
+                    // Decrypt customer name for informational purposes
                     string encryptedCustomerName = reservationNode.SelectSingleNode("CustomerName").InnerText;
                     string decryptedCustomerName = EncDec.Decrypt(encryptedCustomerName);
 
-                    // You can store or display the decrypted customer name if needed
+                    // Display decrypted customer name (optional)
                     Console.WriteLine($"Customer: {decryptedCustomerName}");
                 }
 
-                // Now, filter hotels based on the city and availability
+                // Filter hotels based on city and availability
                 foreach (XmlNode hotelNode in hotelNodes)
                 {
                     XmlNode cityNode = hotelNode.SelectSingleNode("Address/City");
                     if (cityNode != null && cityNode.InnerText.Equals(city, StringComparison.OrdinalIgnoreCase))
                     {
                         string hotelName = hotelNode.SelectSingleNode("Name").InnerText;
-                        if (!bookedHotels.Contains(hotelName))  // Only include hotels that are not booked
+                        if (!bookedHotels.Contains(hotelName)) // Include only non-booked hotels
                         {
                             Hotel hotel = new Hotel
                             {
                                 Name = hotelName,
-                                Rating = hotelNode.Attributes["Rating"]?.Value,
-                                Phone = hotelNode.SelectNodes("Phone").Cast<XmlNode>().Select(n => n.InnerText).ToList(),
+                                Rating = hotelNode.Attributes["Rating"]?.Value, // Retrieve hotel rating
+                                Phone = hotelNode.SelectNodes("Phone").Cast<XmlNode>().Select(n => n.InnerText).ToList(), // Retrieve phone numbers
                                 Address = new Address
                                 {
                                     Number = hotelNode.SelectSingleNode("Address/Number").InnerText,
@@ -82,25 +89,26 @@ namespace Application
             }
             catch (Exception ex)
             {
-                // Handle any errors here
+                // Handle any exceptions during the search process
                 throw new Exception("Error while searching hotels: " + ex.Message);
             }
 
-            return availableHotels;
+            return availableHotels; // Return the list of available hotels
         }
 
+        // Method to book a hotel and store reservation data
         public string BookHotel(string hotelName, DateTime startDate, DateTime endDate, string customerName)
         {
             try
             {
-                // Encrypt the customer name before storing it
+                // Encrypt customer name before saving to reservations
                 string encryptedCustomerName = EncDec.Encrypt(customerName);
 
                 // Load reservation data from Reservations.xml
                 XmlDocument reservationDoc = new XmlDocument();
                 reservationDoc.Load(HttpContext.Current.Server.MapPath("~/Services/BookHotelService/Reservations.xml"));
 
-                // Create a new reservation node
+                // Create a new reservation entry
                 XmlNode reservationNode = reservationDoc.CreateElement("Reservation");
 
                 XmlNode hotelNameNode = reservationDoc.CreateElement("HotelName");
@@ -119,7 +127,7 @@ namespace Application
                 customerNode.InnerText = encryptedCustomerName; // Store encrypted customer name
                 reservationNode.AppendChild(customerNode);
 
-                // Append the reservation to the XML document
+                // Append the new reservation to the XML file
                 reservationDoc.DocumentElement.AppendChild(reservationNode);
 
                 // Save the updated Reservations.xml file
@@ -129,20 +137,22 @@ namespace Application
             }
             catch (Exception ex)
             {
+                // Return an error message if booking fails
                 return "Error while booking hotel: " + ex.Message;
             }
         }
-
     }
 
+    // Class to represent a hotel
     public class Hotel
     {
         public string Name { get; set; }
         public string Rating { get; set; }
-        public List<string> Phone { get; set; } // Assuming this is a list of phone numbers
+        public List<string> Phone { get; set; } // List of phone numbers
         public Address Address { get; set; }
     }
 
+    // Class to represent a hotel's address
     public class Address
     {
         public string Number { get; set; }
@@ -150,7 +160,6 @@ namespace Application
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
-        public string NearstAirport { get; set; }
+        public string NearstAirport { get; set; } // Nearest airport to the hotel
     }
-
 }

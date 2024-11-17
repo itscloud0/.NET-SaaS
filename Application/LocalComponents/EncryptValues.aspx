@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EncryptValues.aspx.cs" Inherits="Application.EncryptValues" %>
-
+<!-- Developed by Ilia Sorokin -->
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -76,20 +76,29 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
+            <!-- Heading for the page -->
             <h2>Encryption/Decryption Tool</h2>
             
+            <!-- Textbox for user input, used for both encryption and decryption -->
             <asp:TextBox ID="txtInput" runat="server" CssClass="input-field" placeholder="Enter text to encrypt/decrypt" />
             
+            <!-- Button to trigger the encryption process -->
             <asp:Button ID="btnEncrypt" runat="server" Text="Encrypt" CssClass="button" OnClick="btnEncrypt_Click" />
+            
+            <!-- Button to trigger the decryption process -->
             <asp:Button ID="btnDecrypt" runat="server" Text="Decrypt" CssClass="button" OnClick="btnDecrypt_Click" />
             
+            <!-- Label for displaying error or informational messages -->
             <asp:Label ID="lblMessage" runat="server" CssClass="message" />
 
+            <!-- Panel to display results after encryption/decryption -->
             <asp:Panel ID="pnlResults" runat="server" Visible="false">
+                <!-- Box to display the original input text -->
                 <div class="result-box">
                     <span class="result-label">Input Text:</span>
                     <asp:Label ID="lblInputText" runat="server" />
                 </div>
+                <!-- Box to display the result of the encryption/decryption -->
                 <div class="result-box">
                     <span class="result-label">Result:</span>
                     <asp:Label ID="lblResult" runat="server" />

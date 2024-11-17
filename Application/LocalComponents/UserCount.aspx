@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserCount.aspx.cs" Inherits="Application.WebForm1" %>
-
+<!-- Developed by Cole Eastman-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -53,11 +53,22 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
+            <!-- Heading for the page -->
             <h2>Active User Count</h2>
+            
+            <!-- Label to display the current login status of the user -->
             <asp:Label ID="lblStatus" CssClass="status-label" runat="server" Text="Not logged in" />
+            
+            <!-- Instructions for the user -->
             <p>Open another web browser (e.g. Firefox, Safari, Google Chrome Incognito)</p>
+            
+            <!-- Instruction to increment active user count -->
             <p>Open this link to increment the active user count.</p>
+            
+            <!-- Instruction to refresh the page for the update -->
             <p>Refresh the page if the update is not being reflected.</p>
+            
+            <!-- Instruction about how the active user count decrements -->
             <p>The active user count will only decrement after 1 minute of inactivity</p>
         </div>
     </form>

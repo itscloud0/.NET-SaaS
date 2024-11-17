@@ -1,4 +1,6 @@
-﻿<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<!--XML to store the Available Hotels-->
+
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<!--  Example hotel from Figure 1  -->
 	<Hotel Rating="4.2">
 		<Name>Westin</Name>

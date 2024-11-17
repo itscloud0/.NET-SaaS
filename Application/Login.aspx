@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Application.Login" %>
-
+<!--Developed by Chris Harris-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -24,7 +24,7 @@
             color: #4a90e2;
         }
         .input-field {
-            width: 90%; /* Adjusted width to make the text box slightly smaller */
+            width: 90%; 
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
@@ -53,12 +53,23 @@
     <form id="form1" runat="server">
         <div class="container">
             <h2>Login</h2>
+
+            <!-- Username input field -->
             <asp:TextBox ID="txtUsername" runat="server" CssClass="input-field" Placeholder="Username"></asp:TextBox>
+
+            <!-- Password input field -->
             <asp:TextBox ID="txtPassword" runat="server" CssClass="input-field" TextMode="Password" Placeholder="Password"></asp:TextBox>
+
+            <!-- Login button -->
             <asp:Button ID="btnLogin" runat="server" CssClass="button" Text="Login" OnClick="btnLogin_Click" />
+
+            <!-- Back button to return to the previous page -->
             <asp:Button ID="btnBack" runat="server" CssClass="button" Text="Back" OnClick="btnBack_Click" />
+
+            <!-- Label for displaying error messages -->
             <asp:Label ID="lblError" runat="server" CssClass="error-message" />
         </div>
     </form>
 </body>
 </html>
+

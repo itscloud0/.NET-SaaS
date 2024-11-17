@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Application.Admin" %>
 <%@ Register Src="~/DeleteConfirmation.ascx" TagPrefix="uc" TagName="DeleteConfirmation" %>
-
+<!-- Developed by Chris Harris-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -125,49 +125,66 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
+            <!-- Heading for the page, indicating it is for Admin to manage staff -->
             <h2>Admin - Manage Staff Members</h2>
+
+            <!-- Label for displaying messages, such as success or error -->
             <asp:Label ID="lblMessage" runat="server" CssClass="message" Text=""></asp:Label>
 
-            <!-- Button to Add Staff -->
+            <!-- Button to trigger the modal for adding a new staff member -->
             <asp:Button ID="btnShowAddStaff" runat="server" CssClass="button" Text="Add Staff Member" OnClientClick="openAddModal(); return false;" /><br />
 
-            <!-- Add Staff Member Modal -->
+            <!-- Modal for adding a staff member, initially hidden -->
             <div id="addModal" class="modal">
                 <div class="modal-content">
+                    <!-- Close button for the modal -->
                     <span class="close" onclick="closeAddModal()">&times;</span>
+
+                    <!-- Heading for the add staff modal -->
                     <h3>Add Staff Member</h3>
+                    <!-- Textboxes for username and password input -->
                     <asp:TextBox ID="txtAddUsername" runat="server" CssClass="input-field" Placeholder="Enter Username"></asp:TextBox>
                     <asp:TextBox ID="txtAddPassword" runat="server" CssClass="input-field" TextMode="Password" Placeholder="Enter Password"></asp:TextBox>
 
-                    <!-- CAPTCHA Section -->
+                    <!-- CAPTCHA section to verify the user is not a bot -->
                     <div class="captcha-container">
+                        <!-- Display CAPTCHA image -->
                         <asp:Image ID="imgCaptcha" runat="server" CssClass="captcha-image" />
+                        <!-- Button to refresh CAPTCHA -->
                         <asp:Button ID="btnRefreshCaptcha" runat="server" CssClass="button" Text="Refresh" OnClick="btnRefreshCaptcha_Click" />
                     </div>
+                    <!-- Textbox for CAPTCHA input -->
                     <asp:TextBox ID="txtCaptchaInput" runat="server" CssClass="input-field" Placeholder="Enter CAPTCHA"></asp:TextBox>
 
+                    <!-- Button to add staff member -->
                     <asp:Button ID="btnAddStaff" runat="server" CssClass="button" Text="Add Staff" OnClick="btnAddStaff_Click" />
                 </div>
             </div>
 
-            <!-- Button to Open Delete Modal -->
+            <!-- Button to trigger the modal for deleting a staff member -->
             <asp:Button ID="btnShowDelete" runat="server" CssClass="button" Text="Delete Staff Member" OnClientClick="openDeleteModal(); return false;" />
 
-            <!-- Delete Staff Member Modal -->
+            <!-- Modal for deleting a staff member, initially hidden -->
             <div id="deleteModal" class="modal">
                 <div class="modal-content">
+                    <!-- Close button for the delete staff modal -->
                     <span class="close" onclick="closeDeleteModal()">&times;</span>
+                    <!-- Heading for the delete staff modal -->
                     <h3>Delete Staff Member</h3>
+                    <!-- Include a custom user control for deletion confirmation -->
                     <uc:DeleteConfirmation ID="DeleteConfirmationControl" runat="server" />
                 </div>
             </div>
 
             <!-- Navigation Buttons -->
+            <!-- Button to log out -->
             <asp:Button ID="btnLogOut" runat="server" CssClass="button" Text="Log Out" OnClick="btnLogOut_Click" />
+            <!-- Button to navigate to the homepage -->
             <asp:Button ID="btnHomePage" runat="server" CssClass="button" Text="Go to Home Page" OnClick="btnGoToDefault_Click" />
+            <!-- Button to view all staff members -->
             <asp:Button ID="btnViewAllStaff" runat="server" CssClass="button" Text="View All Staff Members" OnClick="btnViewAllStaff_Click" />
 
-            <!-- List of Staff Members -->
+            <!-- Section to display the list of staff members -->
             <div class="staff-list">
                 <asp:Label ID="lblStaffList" runat="server" Text="" />
             </div>
@@ -175,18 +192,27 @@
     </form>
 
     <script type="text/javascript">
+        // JavaScript function to open the Add Staff modal
         function openAddModal() {
             document.getElementById("addModal").style.display = "block";
         }
+
+        // JavaScript function to close the Add Staff modal
         function closeAddModal() {
             document.getElementById("addModal").style.display = "none";
         }
+
+        // JavaScript function to open the Delete Staff modal
         function openDeleteModal() {
             document.getElementById("deleteModal").style.display = "block";
         }
+
+        // JavaScript function to close the Delete Staff modal
         function closeDeleteModal() {
             document.getElementById("deleteModal").style.display = "none";
         }
+
+        // Close the modals if clicked outside of the modal
         window.onclick = function (event) {
             const addModal = document.getElementById("addModal");
             const deleteModal = document.getElementById("deleteModal");
