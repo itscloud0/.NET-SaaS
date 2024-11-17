@@ -125,6 +125,15 @@
                     <td>Books a hotel room for a customer within specified dates</td>
                     <td><a href="Services/BookHotel.aspx" class="button">TryIt</a></td>
                 </tr>
+                <tr>
+                    <td>Ilia Sorokin</td>
+                    <td>DLL Class Library Module</td>
+                    <td>Encrypt, Decrypt</td>
+                    <td>plainText (string), ecryptedText (string)</td>
+                    <td>String</td>
+                    <td>Encrypts/Decrypts a string with a specific key value. Used to securely store login credentials and names for the reservations.</td>
+                    <td><a href="LocalComponent/EncryptValues.aspx" class="button">TryIt</a></td>
+                </tr>
                     <tr>
                     <td>Cole Eastman</td>
                     <td>WSDL Service</td>

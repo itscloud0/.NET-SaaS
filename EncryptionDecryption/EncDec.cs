@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Application.LocalComponents
+namespace EncryptionDecryption
 {
     public static class EncDec
     {

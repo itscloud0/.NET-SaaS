@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StaffMembers>
   <Staff>
-    <Username>TA</Username>
-    <Password>Cse445!</Password>
-    <!-- You may store this as a hashed value -->
-  </Staff>
-  <!-- Additional staff members can be added here -->
-  <Staff>
-    <Username>test</Username>
-    <Password>1234</Password>
+    <Username>5wHw8Cfg/DTyiypzKzyDnw==</Username> <!--Encrypted "TA" username-->
+    <Password>qSmGH1KIwKjOladPgC7Yog==</Password> <!--Encrypted "Cse445!" username-->
   </Staff>
 </StaffMembers>

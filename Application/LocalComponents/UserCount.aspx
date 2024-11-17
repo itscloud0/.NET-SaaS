@@ -56,7 +56,7 @@
             <h2>Active User Count</h2>
             <asp:Label ID="lblStatus" CssClass="status-label" runat="server" Text="Not logged in" />
             <p>Open another web browser (e.g. Firefox, Safari, Google Chrome Incognito)</p>
-            <p>Enter the url 'https://localhost:44306/LocalComponents/UserCount.aspx' to increment the active user count.</p>
+            <p>Open this link to increment the active user count.</p>
             <p>Refresh the page if the update is not being reflected.</p>
             <p>The active user count will only decrement after 1 minute of inactivity</p>
         </div>

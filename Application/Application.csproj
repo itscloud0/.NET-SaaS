@@ -73,6 +73,7 @@
   <ItemGroup>
     <!-- Core Pages -->
     <Content Include="Default.aspx" />
+    <Content Include="LocalComponents\EncryptValues.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Admin.aspx" />
     <!-- Local Components -->
@@ -152,7 +153,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LocalComponents\EncDec.cs" />
+    <Compile Include="LocalComponents\EncryptValues.aspx.cs">
+      <DependentUpon>EncryptValues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalComponents\EncryptValues.aspx.designer.cs">
+      <DependentUpon>EncryptValues.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,7 +244,12 @@
     <WCFMetadataStorage Include="Connected Services\BookFlightServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\HotelBookingServiceReference\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EncryptionDecryption\EncryptionDecryption.csproj">
+      <Project>{e6ea9b16-219b-42a4-ad7f-e4885896c4e0}</Project>
+      <Name>EncryptionDecryption</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

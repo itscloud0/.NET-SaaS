@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
+using EncryptionDecryption;
 
 namespace Application
 {
@@ -51,16 +52,19 @@ namespace Application
             try
             {
                 var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                string encryptedUsername = EncDec.Encrypt(username);
 
-                if (staffDoc.Descendants("Staff").Any(s => (string)s.Element("Username") == username))
+                if (staffDoc.Descendants("Staff").Any(s =>
+                    EncDec.Decrypt((string)s.Element("Username")) == username))
                 {
                     lblMessage.Text = "This username already exists in Staff records.";
                     return;
                 }
 
+                // Store encrypted values
                 staffDoc.Root.Add(new XElement("Staff",
-                    new XElement("Username", username),
-                    new XElement("Password", password)));
+                    new XElement("Username", EncDec.Encrypt(username)),
+                    new XElement("Password", EncDec.Encrypt(password))));
                 staffDoc.Save(Server.MapPath("~/Staff.xml"));
 
                 lblMessage.Text = "Staff member added successfully!";
@@ -75,6 +79,52 @@ namespace Application
             }
         }
 
+        private void DeleteStaffMember(object sender, string usernameToDelete)
+        {
+            try
+            {
+                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+
+                var staffToDelete = staffDoc.Descendants("Staff")
+                    .FirstOrDefault(s => EncDec.Decrypt((string)s.Element("Username")) == usernameToDelete);
+
+                if (staffToDelete != null)
+                {
+                    staffToDelete.Remove();
+                    staffDoc.Save(Server.MapPath("~/Staff.xml"));
+                    lblMessage.Text = $"Staff member '{usernameToDelete}' was deleted successfully.";
+                }
+                else
+                {
+                    lblMessage.Text = $"Staff member '{usernameToDelete}' was not found.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = $"Error while deleting the staff member: {ex.Message}";
+            }
+        }
+
+        protected void btnViewAllStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
+                var staffList = staffDoc.Descendants("Staff")
+                    .Select(s => EncDec.Decrypt((string)s.Element("Username")))
+                    .ToList();
+
+                lblStaffList.Text = staffList.Any()
+                    ? "<strong>Staff Members:</strong><br />" + string.Join("<br />", staffList)
+                    : "No staff members found.";
+            }
+            catch (Exception ex)
+            {
+                lblStaffList.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        // Keeping existing CAPTCHA-related methods unchanged
         protected void btnRefreshCaptcha_Click(object sender, EventArgs e)
         {
             GenerateCaptcha();
@@ -111,37 +161,6 @@ namespace Application
             return new string(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private void DeleteStaffMember(object sender, string usernameToDelete)
-        {
-            try
-            {
-                // Load the Staff.xml file
-                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
-
-                // Find the staff member with the specified username
-                var staffToDelete = staffDoc.Descendants("Staff")
-                    .FirstOrDefault(s => (string)s.Element("Username") == usernameToDelete);
-
-                if (staffToDelete != null)
-                {
-                    // Remove the staff member and save the changes
-                    staffToDelete.Remove();
-                    staffDoc.Save(Server.MapPath("~/Staff.xml"));
-
-                    lblMessage.Text = $"Staff member '{usernameToDelete}' was deleted successfully.";
-                }
-                else
-                {
-                    lblMessage.Text = $"Staff member '{usernameToDelete}' was not found.";
-                }
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = $"Error while deleting the staff member: {ex.Message}";
-            }
-        }
-
-
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             Session.Clear();
@@ -151,23 +170,6 @@ namespace Application
         protected void btnGoToDefault_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
-        }
-
-        protected void btnViewAllStaff_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var staffDoc = XDocument.Load(Server.MapPath("~/Staff.xml"));
-                var staffList = staffDoc.Descendants("Staff").Select(s => (string)s.Element("Username")).ToList();
-
-                lblStaffList.Text = staffList.Any()
-                    ? "<strong>Staff Members:</strong><br />" + string.Join("<br />", staffList)
-                    : "No staff members found.";
-            }
-            catch (Exception ex)
-            {
-                lblStaffList.Text = $"Error: {ex.Message}";
-            }
         }
     }
 }

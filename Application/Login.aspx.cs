@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.UI;
 using System.Xml.Linq;
+using EncryptionDecryption;
 
 namespace Application
 {
@@ -33,7 +34,7 @@ namespace Application
             {
                 // Valid member credentials, redirect to Member page
                 Session["MemberUser"] = username;
-                Response.Redirect("MemberPage.aspx"); // Replace with the actual member page
+                Response.Redirect("MemberPage.aspx");
             }
             else
             {
@@ -53,9 +54,17 @@ namespace Application
             {
                 // Load Staff.xml and check for matching credentials
                 var doc = XDocument.Load(Server.MapPath("~/Staff.xml"));
-                var staff = doc.Descendants("Staff") // Matching <Staff> element
-                               .FirstOrDefault(s => (string)s.Element("Username") == username &&
-                                                    (string)s.Element("Password") == password);
+                var encryptedUsername = EncDec.Encrypt(username);
+                var encryptedPassword = EncDec.Encrypt(password);
+
+                var staff = doc.Descendants("Staff")
+                    .FirstOrDefault(s =>
+                    {
+                        string storedUsername = EncDec.Decrypt((string)s.Element("Username"));
+                        string storedPassword = EncDec.Decrypt((string)s.Element("Password"));
+                        return storedUsername == username && storedPassword == password;
+                    });
+
                 return staff != null;
             }
             catch (Exception ex)
@@ -71,9 +80,17 @@ namespace Application
             {
                 // Load Member.xml and check for matching credentials
                 var doc = XDocument.Load(Server.MapPath("~/Member.xml"));
-                var member = doc.Descendants("Members") // Matching <Members> element
-                                .FirstOrDefault(m => (string)m.Element("Username") == username &&
-                                                     (string)m.Element("Password") == password);
+                var encryptedUsername = EncDec.Encrypt(username);
+                var encryptedPassword = EncDec.Encrypt(password);
+
+                var member = doc.Descendants("Members")
+                    .FirstOrDefault(m =>
+                    {
+                        string storedUsername = EncDec.Decrypt((string)m.Element("Username"));
+                        string storedPassword = EncDec.Decrypt((string)m.Element("Password"));
+                        return storedUsername == username && storedPassword == password;
+                    });
+
                 return member != null;
             }
             catch (Exception ex)
