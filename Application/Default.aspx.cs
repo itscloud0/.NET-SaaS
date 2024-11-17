@@ -36,27 +36,5 @@ namespace Application
                 Response.Redirect("Admin.aspx");
             }
         }
-
-        protected void Logout(object sender, EventArgs e)
-        {
-            Session.Clear(); // Clear all session data
-            UpdateLoginStatus(); // Update the status label
-        }
-
-        private void UpdateLoginStatus()
-        {
-            if (Session["LoggedInUser"] != null)
-            {
-                lblStatus.Text = $"Logged in as: {Session["LoggedInUser"]}";
-            }
-            else if (Session["StaffUser"] != null)
-            {
-                lblStatus.Text = $"Logged in as Staff: {Session["StaffUser"]}";
-            }
-            else
-            {
-                lblStatus.Text = "Not logged in";
-            }
-        }
     }
 }

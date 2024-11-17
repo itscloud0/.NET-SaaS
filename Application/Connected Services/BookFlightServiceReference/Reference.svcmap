@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="19869e91-6c6c-4a06-9348-e5e4db0c99de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="96175b1b-998e-434c-82f3-68e486d40c69" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44306/BookFlightService/BookFlight.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44306/Services/BookFlightService/BookFlight.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BookFlight.disco" MetadataType="Disco" ID="0fe3ecb2-34ba-425d-b771-170711b7bc5c" SourceId="1" SourceUrl="https://localhost:44306/BookFlightService/BookFlight.svc?disco" />
-    <MetadataFile FileName="BookFlight.xsd" MetadataType="Schema" ID="1502c1ee-1527-4794-83f1-39d2d1ad6fd6" SourceId="1" SourceUrl="https://localhost:44306/BookFlightService/BookFlight.svc?xsd=xsd0" />
-    <MetadataFile FileName="BookFlight.wsdl" MetadataType="Wsdl" ID="8cefcb58-20f3-4e45-b99f-41731e168e6c" SourceId="1" SourceUrl="https://localhost:44306/BookFlightService/BookFlight.svc?wsdl" />
-    <MetadataFile FileName="BookFlight1.xsd" MetadataType="Schema" ID="7a56a029-28e4-45ff-a67a-a78fd4acb94b" SourceId="1" SourceUrl="https://localhost:44306/BookFlightService/BookFlight.svc?xsd=xsd1" />
+    <MetadataFile FileName="BookFlight.xsd" MetadataType="Schema" ID="2b9ff007-7d91-4bf5-8f3b-dac4fd572472" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?xsd=xsd1" />
+    <MetadataFile FileName="BookFlight.disco" MetadataType="Disco" ID="3eddd1c0-e2d9-43c2-bdfe-d49983ba9db2" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?disco" />
+    <MetadataFile FileName="BookFlight1.xsd" MetadataType="Schema" ID="6c0788b7-9054-42aa-874a-8bd2c2f1f759" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?xsd=xsd0" />
+    <MetadataFile FileName="BookFlight.wsdl" MetadataType="Wsdl" ID="02322915-eb1a-4d6d-93dd-a54f78898bd5" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

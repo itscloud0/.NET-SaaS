@@ -1,0 +1,136 @@
+﻿<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!--  Example hotel from Figure 1  -->
+	<Hotel Rating="4.2">
+		<Name>Westin</Name>
+		<Phone>480-968-8885</Phone>
+		<Phone>800-937-8461</Phone>
+		<Address NearstAirport="Sky Harbor">
+			<Number>11</Number>
+			<Street>E.7th St</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+	<!--  The Peninsula Chicago  -->
+	<Hotel Rating="5.0">
+		<Name>The Peninsula Chicago</Name>
+		<Phone>312-337-2888</Phone>
+		<Address NearstAirport="O'Hare">
+			<Number>108</Number>
+			<Street>East Superior Street</Street>
+			<City>Chicago</City>
+			<State>IL</State>
+			<Zip>60611</Zip>
+		</Address>
+	</Hotel>
+	<!--  Moxy Downtown Los Angeles  -->
+	<Hotel Rating="3.9">
+		<Name>Moxy Downtown Los Angeles</Name>
+		<Phone>310-669-9252</Phone>
+		<Address NearstAirport="Los Angeles International Airport">
+			<Number>1260</Number>
+			<Street>South Figueroa Street</Street>
+			<City>Los Angeles</City>
+			<State>CA</State>
+			<Zip>90015</Zip>
+		</Address>
+	</Hotel>
+	<!--  Royalton  -->
+	<Hotel Rating="4.4">
+		<Name>Royalton</Name>
+		<Phone>212-869-4400</Phone>
+		<Address NearstAirport="La Guardia">
+			<Number>44</Number>
+			<Street>West 44th Street</Street>
+			<City>New York</City>
+			<State>NY</State>
+			<Zip>10036</Zip>
+		</Address>
+	</Hotel>
+	<!--  Hampton Inn  -->
+	<Hotel Rating="3.8">
+		<Name>Hampton Inn</Name>
+		<Phone>415-546-3110</Phone>
+		<Address NearstAirport="San Francisco International Airport">
+			<Number>842</Number>
+			<Street>Mission Street</Street>
+			<City>San Francisco</City>
+			<State>CA</State>
+			<Zip>94103</Zip>
+		</Address>
+	</Hotel>
+	<!--  Blossom  -->
+	<Hotel Rating="4.3">
+		<Name>Blossom</Name>
+		<Phone>832-734-8888</Phone>
+		<Address NearstAirport="William P. Hobby">
+			<Number>7118</Number>
+			<Street>Bertner Avenue</Street>
+			<City>Houston</City>
+			<State>TX</State>
+			<Zip>77030</Zip>
+		</Address>
+	</Hotel>
+	<!--  Alexandra Inn  -->
+	<Hotel Rating="4.6">
+		<Name>Alexandra Inn</Name>
+		<Phone>231-938-6468</Phone>
+		<Address NearstAirport="Cherry Capital">
+			<Number>2227 </Number>
+			<Street>US-31</Street>
+			<City>Traverse City</City>
+			<State>MI</State>
+			<Zip>49686</Zip>
+		</Address>
+	</Hotel>
+	<!--  Hard Rock Hotel  -->
+	<Hotel>
+		<Name>Hard Rock Hotel</Name>
+		<Phone>386-947-7300</Phone>
+		<Address NearstAirport="Daytona Beach International Airport">
+			<Number>918</Number>
+			<Street>N Atlantic Avenue</Street>
+			<City>Daytona Beach</City>
+			<State>FL</State>
+			<Zip>32118</Zip>
+		</Address>
+	</Hotel>
+	<!--  Wynn  -->
+	<Hotel Rating="4.5">
+		<Name>Wynn</Name>
+		<Phone>702-770-7000</Phone>
+		<Address NearstAirport="Harry Reid">
+			<Number>3131</Number>
+			<Street>Las Vegas Blvd S</Street>
+			<City>Las Vegas</City>
+			<State>NV</State>
+			<Zip>89109</Zip>
+		</Address>
+	</Hotel>
+	<!--  Canopy  -->
+	<Hotel Rating="4.7">
+		<Name>Canopy</Name>
+		<Phone>480-968-6800</Phone>
+		<Address NearstAirport="Sky Harbor">
+			<Number>108</Number>
+			<Street>East University Drive</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+	<!--  Clarion Suites -->
+	<Hotel Rating="3.7">
+		<Name>Clarion Suites</Name>
+		<Phone>907-921-0688</Phone>
+		<Phone>907-222-5005</Phone>
+		<Address NearstAirport="Ted Stevens">
+			<Number>1110</Number>
+			<Street>West 8th Avenue</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+</Hotels>
