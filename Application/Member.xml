@@ -1,5 +1,5 @@
-﻿<!--XML to store the Members-->
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Stores Member Credentials-->
 <StaffMembers>
 	<Members>
 		<Username>Test</Username>

@@ -1,6 +1,5 @@
-﻿<!--XML to store the Staff-->
-
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--XML to store the Staff-->
 <StaffMembers>
   <Staff>
     <Username>5wHw8Cfg/DTyiypzKzyDnw==</Username> <!--Encrypted "TA" username-->
