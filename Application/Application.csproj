@@ -72,6 +72,15 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.disco" />
     <Content Include="Default.aspx" />
     <Content Include="LocalComponents\EncryptValues.aspx" />
     <Content Include="Login.aspx" />
@@ -100,40 +109,31 @@
     <Content Include="Connected Services\HotelBookingServiceReference\Application.HotelBookingServiceReference.Hotel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.disco" />
     <None Include="Connected Services\HotelBookingServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\HotelBookingServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.wsdl" />
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\HotelBookingServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.wsdl" />
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <!-- Flight Booking Service References -->
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
     <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
-      <SubType>Designer</SubType>
     </None>
     <!-- Configuration Files -->
     <None Include="packages.config" />

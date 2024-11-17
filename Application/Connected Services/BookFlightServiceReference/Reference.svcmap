@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44306/Services/BookFlightService/BookFlight.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://webstrar113.fulton.asu.edu/page0/Services/BookFlightService/BookFlight.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BookFlight.xsd" MetadataType="Schema" ID="2b9ff007-7d91-4bf5-8f3b-dac4fd572472" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?xsd=xsd1" />
-    <MetadataFile FileName="BookFlight.disco" MetadataType="Disco" ID="3eddd1c0-e2d9-43c2-bdfe-d49983ba9db2" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?disco" />
-    <MetadataFile FileName="BookFlight1.xsd" MetadataType="Schema" ID="6c0788b7-9054-42aa-874a-8bd2c2f1f759" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?xsd=xsd0" />
-    <MetadataFile FileName="BookFlight.wsdl" MetadataType="Wsdl" ID="02322915-eb1a-4d6d-93dd-a54f78898bd5" SourceId="1" SourceUrl="https://localhost:44306/Services/BookFlightService/BookFlight.svc?wsdl" />
+    <MetadataFile FileName="BookFlight2.xsd" MetadataType="Schema" ID="04847851-330c-4460-9eba-b5305986bfb0" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookFlightService/BookFlight.svc?xsd=xsd1" />
+    <MetadataFile FileName="BookFlight1.wsdl" MetadataType="Wsdl" ID="bdcc5e57-86c9-4feb-aad5-6f451d637a4a" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookFlightService/BookFlight.svc?wsdl" />
+    <MetadataFile FileName="BookFlight21.xsd" MetadataType="Schema" ID="d49b2447-0430-448f-a5e4-0c71b4b7afe5" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookFlightService/BookFlight.svc?xsd=xsd0" />
+    <MetadataFile FileName="BookFlight1.disco" MetadataType="Disco" ID="7381d781-f0a8-47ed-b3da-af8bfddeb682" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookFlightService/BookFlight.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

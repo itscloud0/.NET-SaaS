@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://webstrar113.fulton.asu.edu/page0/Services/BookHotelService/HotelBookingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HotelBookingService.xsd" MetadataType="Schema" ID="dd5a01e6-d9c5-46b6-aab8-20d3ba3efce4" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="HotelBookingService1.xsd" MetadataType="Schema" ID="66cb0dae-3449-461a-a15f-da96190dea10" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?xsd=xsd3" />
-    <MetadataFile FileName="HotelBookingService.disco" MetadataType="Disco" ID="4e5f3a2c-79dc-400c-9044-91aaa3c6ecb6" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?disco" />
-    <MetadataFile FileName="HotelBookingService2.xsd" MetadataType="Schema" ID="69acee28-97dc-4df5-8965-f22b1f852822" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="HotelBookingService.wsdl" MetadataType="Wsdl" ID="d8ddf305-fa10-4423-b417-bea24e72d5f8" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?wsdl" />
-    <MetadataFile FileName="HotelBookingService3.xsd" MetadataType="Schema" ID="c3d273cb-d73f-42d6-bc5d-a12ddfeb4318" SourceId="1" SourceUrl="https://localhost:44306/Services/BookHotelService/HotelBookingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HotelBookingService4.xsd" MetadataType="Schema" ID="8ba72315-bc6d-4c3d-9039-9f6e19258932" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HotelBookingService41.xsd" MetadataType="Schema" ID="50c51a84-e3b5-4610-8a03-e1b0071c9bb1" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HotelBookingService42.xsd" MetadataType="Schema" ID="83f1a192-1a01-4bc9-8b5f-8f639df99f46" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HotelBookingService43.xsd" MetadataType="Schema" ID="8c254327-f11c-4dae-8b58-71d7d886adba" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HotelBookingService1.disco" MetadataType="Disco" ID="a50001ea-4781-40fa-b6e0-df5dc6c78072" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?disco" />
+    <MetadataFile FileName="HotelBookingService1.wsdl" MetadataType="Wsdl" ID="846d522c-3188-42f1-863f-63e2169190f8" SourceId="1" SourceUrl="http://webstrar113.fulton.asu.edu/Page0/Services/BookHotelService/HotelBookingService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
