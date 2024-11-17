@@ -145,8 +145,8 @@
                 </tr>
                 <tr>
                     <td>Chris Harris</td>
+                    <td>User Control</td>
                     <td>Login Window</td>
-                    <td>User Authentication</td>
                     <td>Username, Password</td>
                     <td>String</td>
                     <td>Login page for user authentication</td>
@@ -154,7 +154,7 @@
                 </tr>
                 <tr>
                     <td>Chris Harris</td>
-                    <td>Session Management</td>
+                    <td>Cookie for storing user profile</td>
                     <td>User Profile Management</td>
                     <td>User ID</td>
                     <td>String</td>
