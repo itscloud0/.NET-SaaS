@@ -7,6 +7,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Web;
+using System.Xml;
+using EncryptionDecryption;
+
 
 namespace Application
 {
@@ -31,22 +35,64 @@ namespace Application
         };
 
         // Method to book a flight, verifying the validity of departure and arrival airport codes.
-        public string BookFlightFunction(int time, string depart, string arrival)
+         public string BookFlightFunction(int time, string depart, string arrival)
         {
-            // Check if the departure location is a valid IATA code.
-            if (!ValidLocations.Contains(depart.ToUpper()))
+            try
             {
-                return $"Error: '{depart}' is not a valid location."; // Return an error message if invalid.
-            }
+                // flight validation
+                if (!ValidLocations.Contains(depart.ToUpper()))
+                {
+                    return $"Error: '{depart}' is not a valid location.";
+                }
 
-            // Check if the arrival location is a valid IATA code.
-            if (!ValidLocations.Contains(arrival.ToUpper()))
+                if (!ValidLocations.Contains(arrival.ToUpper()))
+                {
+                    return $"Error: '{arrival}' is not a valid location.";
+                }
+
+                // load Flights.xml file
+                string xmlFilePath = HttpContext.Current.Server.MapPath("~/Services/BookFlightService/Flights.xml");
+                XmlDocument flightDoc = new XmlDocument();
+
+                if (System.IO.File.Exists(xmlFilePath))
+                {
+                    flightDoc.Load(xmlFilePath);
+                }
+                else
+                {
+                    // new XML structure if the file doesn't exist
+                    XmlDeclaration xmlDeclaration = flightDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                    XmlNode rootNode = flightDoc.CreateElement("Flights");
+                    flightDoc.AppendChild(xmlDeclaration);
+                    flightDoc.AppendChild(rootNode);
+                }
+
+                // flight reservation node
+                XmlNode flightNode = flightDoc.CreateElement("Flight");
+
+                XmlNode timeNode = flightDoc.CreateElement("Time");
+                timeNode.InnerText = time.ToString();
+                flightNode.AppendChild(timeNode);
+
+                XmlNode departNode = flightDoc.CreateElement("Departure");
+                departNode.InnerText = depart.ToUpper();
+                flightNode.AppendChild(departNode);
+
+                XmlNode arrivalNode = flightDoc.CreateElement("Arrival");
+                arrivalNode.InnerText = arrival.ToUpper();
+                flightNode.AppendChild(arrivalNode);
+
+                // append new flight reservation to the XML document
+                flightDoc.DocumentElement.AppendChild(flightNode);
+
+                flightDoc.Save(xmlFilePath);
+
+                return $"Flight booked successfully!";
+            }
+            catch (Exception ex)
             {
-                return $"Error: '{arrival}' is not a valid location."; // Return an error message if invalid.
+                return $"Error while booking flight: {ex.Message}";
             }
-
-            // If both locations are valid, return a success message.
-            return "Flight Booked Successfully!";
         }
     }
 }

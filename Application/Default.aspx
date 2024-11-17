@@ -140,7 +140,7 @@
                     <td>BookFlightFunction</td>
                     <td>BookFlightFunction (int, string, string)</td>
                     <td>String</td>
-                    <td>Books a flight</td>
+                    <td>Books and Saves flight</td>
                     <td><a href="Services/BookFlight.aspx" class="button">TryIt</a></td>
                 </tr>
                 <tr>

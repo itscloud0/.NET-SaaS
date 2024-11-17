@@ -72,15 +72,21 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.wsdl" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight2.xsd">
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight21.xsd">
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="LocalComponents\EncryptValues.aspx" />
     <Content Include="Login.aspx" />
@@ -92,6 +98,7 @@
     <!-- Services - Flight Booking -->
     <Content Include="Services\BookFlight.aspx" />
     <Content Include="Services\BookFlightService\BookFlight.svc" />
+    <Content Include="Services\BookFlightService\Flights.xml" />
     <!-- Services - Hotel Booking -->
     <Content Include="Services\BookHotel.aspx" />
     <Content Include="Services\BookHotelService\HotelBookingService.svc" />
@@ -129,12 +136,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <!-- Flight Booking Service References -->
-    <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <!-- Configuration Files -->
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\WSDL_Set_Up_11-17-2024.pubxml" />
@@ -147,6 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,11 +224,6 @@
       <DependentUpon>HotelBookingService.svc</DependentUpon>
     </Compile>
     <!-- Service References -->
-    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\HotelBookingServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
