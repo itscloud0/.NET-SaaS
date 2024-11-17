@@ -137,6 +137,7 @@
     </None>
     <!-- Configuration Files -->
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\WSDL_Set_Up_11-17-2024.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

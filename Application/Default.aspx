@@ -132,7 +132,7 @@
                     <td>plainText (string), ecryptedText (string)</td>
                     <td>String</td>
                     <td>Encrypts/Decrypts a string with a specific key value. Used to securely store login credentials and names for the reservations.</td>
-                    <td><a href="LocalComponent/EncryptValues.aspx" class="button">TryIt</a></td>
+                    <td><a href="LocalComponents/EncryptValues.aspx" class="button">TryIt</a></td>
                 </tr>
                     <tr>
                     <td>Cole Eastman</td>
