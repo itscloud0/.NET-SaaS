@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Application.Default" %>
-<!-- Developed by Ilia Sorokin, Chriss Harris and Cole Eastman-->
+<!-- Developed by Ilia Sorokin, Chris Harris and Cole Eastman-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -169,6 +169,15 @@
                     <td>String</td>
                     <td>Page for managing user profile and temporary states using cookies and sessions</td>
                     <td><a href="UserProfile.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Chris Harris</td>
+                    <td>WSDL</td>
+                    <td>Exchange Rate Retrieval</td>
+                    <td>Base Currency, Target Currency</td>
+                    <td>Decimal</td>
+                    <td>Page for retrieving and displaying currency exchange rates</td>
+                    <td><a href="CurrencyExchange.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>

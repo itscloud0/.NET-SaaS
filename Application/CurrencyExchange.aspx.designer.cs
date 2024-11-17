@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class UserProfile
+    public partial class CurrencyExchange
     {
 
         /// <summary>
@@ -24,49 +24,49 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblMessage control.
+        /// txtBaseCurrency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.TextBox txtBaseCurrency;
 
         /// <summary>
-        /// txtName control.
+        /// txtTargetCurrency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox txtTargetCurrency;
 
         /// <summary>
-        /// txtAge control.
+        /// btnGetRate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAge;
+        protected global::System.Web.UI.WebControls.Button btnGetRate;
 
         /// <summary>
-        /// btnSaveProfile control.
+        /// lblResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveProfile;
+        protected global::System.Web.UI.WebControls.Label lblResult;
 
         /// <summary>
-        /// btnShowProfile control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowProfile;
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
         /// btnBack control.
