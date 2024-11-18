@@ -73,7 +73,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <!-- Title and Application Introduction -->
             <h1>Welcome to Our Travel Booking Application</h1>
