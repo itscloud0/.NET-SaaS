@@ -190,7 +190,7 @@
     </None>
     <!-- Configuration Files -->
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\All_Merged_11-17-2024.pubxml" />
+    <None Include="Properties\PublishProfiles\FINAL.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,11 +213,6 @@
     </Compile>
     <Compile Include="ActivityLog.ascx.designer.cs">
       <DependentUpon>ActivityLog.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
