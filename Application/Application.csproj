@@ -111,16 +111,16 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight11.disco" />
     <Content Include="GreetingControl.ascx" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
     <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
