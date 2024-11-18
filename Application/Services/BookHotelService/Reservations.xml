@@ -1,10 +1,5 @@
 <!--XML to store Encrypted Reservations-->
 <Reservations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- Empty file to start with -->
-  <Reservation>
-    <HotelName>Moxy Downtown Los Angeles</HotelName>
-    <StartDate>2024-12-05</StartDate>
-    <EndDate>2024-12-07</EndDate>
-    <CustomerName>Nat3DV+zV0WYuDT4VQGt7w==</CustomerName>
-  </Reservation>
+
 </Reservations>

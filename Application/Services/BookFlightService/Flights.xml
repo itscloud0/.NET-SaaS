@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--XML to store the Booked Flights-->
 <Flights>
-
+  <Flight>
+    <Time>12</Time>
+    <Departure>PHX</Departure>
+    <Arrival>ATL</Arrival>
+  </Flight>
 </Flights>

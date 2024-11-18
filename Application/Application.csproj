@@ -134,6 +134,7 @@
     <Content Include="ExchangeRateService.asmx" />
     <Content Include="LocalComponents\ActivityLogPage.aspx" />
     <Content Include="LocalComponents\EncryptValues.aspx" />
+    <Content Include="LocalComponents\UserProfile.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Admin.aspx" />
     <!-- Local Components -->
@@ -153,7 +154,6 @@
     <Content Include="Staff.xml" />
     <Content Include="Member.xml" />
     <Content Include="TryGreeting.aspx" />
-    <Content Include="LocalComponents\UserProfile.aspx" />
     <!-- Web Configuration -->
     <Content Include="Web.config" />
   </ItemGroup>
@@ -244,6 +244,13 @@
     <Compile Include="LocalComponents\EncryptValues.aspx.designer.cs">
       <DependentUpon>EncryptValues.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LocalComponents\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,9 +326,6 @@
     </Compile>
     <Compile Include="TryGreeting.aspx.designer.cs">
       <DependentUpon>TryGreeting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="GreetingControl.ascx.cs">
       <DependentUpon>GreetingControl.ascx</DependentUpon>

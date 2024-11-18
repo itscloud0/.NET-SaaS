@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System;
-using System.Web.UI;
 
 // Created by Cole Eastman
 
