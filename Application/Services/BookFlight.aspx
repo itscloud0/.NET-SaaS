@@ -1,7 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookFlight.aspx.cs" Inherits="Application.Services.BookFlight1" %> 
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head runat="server">
     <title>Book Flight - Travel Booking Application</title>
     <style>
@@ -52,6 +55,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <h2>Book Flight</h2>
             <asp:TextBox ID="txtTime" runat="server" CssClass="input-field" Placeholder="Select Time" TextMode="Time"></asp:TextBox>

@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Application.Default" %>
 <%@ Register Src="GreetingControl.ascx" TagName="GreetingControl" TagPrefix="uc" %>
-<!-- Developed by Ilia Sorokin, Chriss Harris and Cole Eastman-->
+<!-- Developed by Ilia Sorokin, Chris Harris and Cole Eastman-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title>Welcome to Travel Booking Application</title>
     <style>
@@ -129,6 +130,15 @@
                 </tr>
                 <tr>
                     <td>Ilia Sorokin</td>
+                    <td>User Control</td>
+                    <td>AddActivity, LoadActivityLog, SaveActivityLog, ClearLog, LogFlightBooking, LogHotelBooking, LogLogin, LogLogout</td>
+                    <td>username (string),hotelName (string), checkInDate (string), checkOutDate (string), time (string, depart (string), activity(string)</td>
+                    <td>void</td>
+                    <td>Logs the activity of the user.</td>
+                    <td><a href="LocalComponents/ActivityLogPage.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Ilia Sorokin</td>
                     <td>DLL Class Library Module</td>
                     <td>Encrypt, Decrypt</td>
                     <td>plainText (string), ecryptedText (string)</td>
@@ -170,7 +180,16 @@
                     <td>User ID</td>
                     <td>String</td>
                     <td>Page for managing user profile and temporary states using cookies and sessions</td>
-                    <td><a href="UserProfile.aspx" class="button">TryIt</a></td>
+                    <td><a href="LocalComponents/UserProfile.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Chris Harris</td>
+                    <td>WSDL</td>
+                    <td>Exchange Rate Retrieval</td>
+                    <td>Base Currency, Target Currency</td>
+                    <td>Decimal</td>
+                    <td>Page for retrieving and displaying currency exchange rates</td>
+                    <td><a href="CurrencyExchange.aspx" class="button">TryIt</a></td>
                 </tr>
                 <tr>
                     <td>Cole Eastman</td>
