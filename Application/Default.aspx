@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Application.Default" %>
+<%@ Register Src="GreetingControl.ascx" TagName="GreetingControl" TagPrefix="uc" %>
 <!-- Developed by Ilia Sorokin, Chriss Harris and Cole Eastman-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -75,6 +76,7 @@
         <div class="container">
             <!-- Title and Application Introduction -->
             <h1>Welcome to Our Travel Booking Application</h1>
+            <uc:GreetingControl ID="GreetingControl1" runat="server" />
             <p class="description">
                 This application offers users the ability to browse and book travel options, including flights, hotels, and activities.
                 Public visitors can explore basic features, while registered members gain access to additional booking options.
@@ -169,6 +171,15 @@
                     <td>String</td>
                     <td>Page for managing user profile and temporary states using cookies and sessions</td>
                     <td><a href="UserProfile.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Cole Eastman</td>
+                    <td>User Control</td>
+                    <td>GreetingControl</td>
+                    <td>None</td>
+                    <td>String</td>
+                    <td>Displays a personalized greeting based on the current time of day</td>
+                    <td><a href="TryGreeting.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>

@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class Default
+    public partial class TryGreeting
     {
 
         /// <summary>
@@ -31,32 +31,5 @@ namespace Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Application.GreetingControl GreetingControl1;
-
-        /// <summary>
-        /// btnMemberPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMemberPage;
-
-        /// <summary>
-        /// btnStaffPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffPage;
-
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
     }
 }
