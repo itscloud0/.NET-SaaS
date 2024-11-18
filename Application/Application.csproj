@@ -111,14 +111,22 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.wsdl" />
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight2.xsd">
+    <Content Include="GreetingControl.ascx" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.wsdl" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BookFlightServiceReference\BookFlight21.xsd">
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\BookFlightServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\BookFlightServiceReference\BookFlight1.disco" />
     <Content Include="CurrencyExchange.aspx" />
     <Content Include="ActivityLog.ascx" />
@@ -135,6 +143,7 @@
     <!-- Services - Flight Booking -->
     <Content Include="Services\BookFlight.aspx" />
     <Content Include="Services\BookFlightService\BookFlight.svc" />
+    <Content Include="Services\BookFlightService\Flights.xml" />
     <!-- Services - Hotel Booking -->
     <Content Include="Services\BookHotel.aspx" />
     <Content Include="Services\BookHotelService\HotelBookingService.svc" />
@@ -143,6 +152,8 @@
     <!-- XML Data Files -->
     <Content Include="Staff.xml" />
     <Content Include="Member.xml" />
+    <Content Include="TryGreeting.aspx" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="LocalComponents\UserProfile.aspx" />
     <!-- Web Configuration -->
     <Content Include="Web.config" />
@@ -203,6 +214,11 @@
     </Compile>
     <Compile Include="ActivityLog.ascx.designer.cs">
       <DependentUpon>ActivityLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -298,12 +314,26 @@
     </Compile>
     <!-- Assembly Info -->
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LocalComponents\UserProfile.aspx.cs">
+    <Compile Include="TryGreeting.aspx.cs">
+      <DependentUpon>TryGreeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TryGreeting.aspx.designer.cs">
+      <DependentUpon>TryGreeting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GreetingControl.ascx.cs">
+      <DependentUpon>GreetingControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GreetingControl.ascx.designer.cs">
+      <DependentUpon>GreetingControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
