@@ -81,7 +81,9 @@
     </None>
     <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
     <None Include="Connected Services\BookFlightServiceReference\BookFlight1.disco" />
+    <Content Include="ActivityLog.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="LocalComponents\ActivityLogPage.aspx" />
     <Content Include="LocalComponents\EncryptValues.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Admin.aspx" />
@@ -100,7 +102,7 @@
     <!-- XML Data Files -->
     <Content Include="Staff.xml" />
     <Content Include="Member.xml" />
-    <Content Include="UserProfile.aspx" />
+    <Content Include="LocalComponents\UserProfile.aspx" />
     <!-- Web Configuration -->
     <Content Include="Web.config" />
   </ItemGroup>
@@ -147,12 +149,26 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <Compile Include="ActivityLog.ascx.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityLog.ascx.designer.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalComponents\ActivityLogPage.aspx.cs">
+      <DependentUpon>ActivityLogPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalComponents\ActivityLogPage.aspx.designer.cs">
+      <DependentUpon>ActivityLogPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="LocalComponents\EncryptValues.aspx.cs">
       <DependentUpon>EncryptValues.aspx</DependentUpon>
@@ -230,11 +246,11 @@
     </Compile>
     <!-- Assembly Info -->
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserProfile.aspx.cs">
+    <Compile Include="LocalComponents\UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserProfile.aspx.designer.cs">
+    <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

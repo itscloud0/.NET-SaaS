@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookHotel.aspx.cs" Inherits="Application.BookHotel" %>
-
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title>Book Hotel</title>
     <style>
@@ -82,6 +83,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <h1>Book a Hotel</h1>
             <p class="description">

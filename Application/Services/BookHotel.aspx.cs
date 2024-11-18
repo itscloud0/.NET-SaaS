@@ -132,8 +132,7 @@ namespace Application
                 // Clear input fields
                 txtCustomerName.Text = string.Empty;
 
-                // Optionally refresh the hotel list
-                btnSearch_Click(sender, e);
+                activityLog.LogHotelBooking(selectedHotel, startDate.ToShortDateString(), endDate.ToShortDateString());
             }
             catch (Exception ex)
             {

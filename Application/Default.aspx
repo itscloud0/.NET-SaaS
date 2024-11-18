@@ -1,7 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Application.Default" %>
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
+
 <!-- Developed by Ilia Sorokin, Chriss Harris and Cole Eastman-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title>Welcome to Travel Booking Application</title>
     <style>
@@ -72,6 +75,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <!-- Title and Application Introduction -->
             <h1>Welcome to Our Travel Booking Application</h1>
@@ -127,6 +131,15 @@
                 </tr>
                 <tr>
                     <td>Ilia Sorokin</td>
+                    <td>User Control</td>
+                    <td>AddActivity, LoadActivityLog, SaveActivityLog, ClearLog, LogFlightBooking, LogHotelBooking, LogLogin, LogLogout</td>
+                    <td>username (string),hotelName (string), checkInDate (string), checkOutDate (string), time (string, depart (string), activity(string)</td>
+                    <td>void</td>
+                    <td>Logs the activity of the user.</td>
+                    <td><a href="LocalComponents/ActivityLogPage.aspx" class="button">TryIt</a></td>
+                </tr>
+                <tr>
+                    <td>Ilia Sorokin</td>
                     <td>DLL Class Library Module</td>
                     <td>Encrypt, Decrypt</td>
                     <td>plainText (string), ecryptedText (string)</td>
@@ -168,7 +181,7 @@
                     <td>User ID</td>
                     <td>String</td>
                     <td>Page for managing user profile and temporary states using cookies and sessions</td>
-                    <td><a href="UserProfile.aspx" class="button">TryIt</a></td>
+                    <td><a href="LocalComponents/UserProfile.aspx" class="button">TryIt</a></td>
                 </tr>
                 <!-- Add additional rows for other services as needed -->
             </table>

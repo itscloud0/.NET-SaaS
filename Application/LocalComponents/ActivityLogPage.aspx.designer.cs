@@ -11,7 +11,7 @@ namespace Application
 {
 
 
-    public partial class Default
+    public partial class ActivityLogPage
     {
 
         /// <summary>
@@ -24,31 +24,22 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// activityLog control.
+        /// lstActivityLog control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Application.ActivityLog activityLog;
+        protected global::System.Web.UI.WebControls.ListBox lstActivityLog;
 
         /// <summary>
-        /// btnMemberPage control.
+        /// btnClearLog control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMemberPage;
-
-        /// <summary>
-        /// btnStaffPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffPage;
+        protected global::System.Web.UI.WebControls.Button btnClearLog;
 
         /// <summary>
         /// lblStatus control.
