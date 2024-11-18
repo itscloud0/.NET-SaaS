@@ -80,6 +80,10 @@ namespace Application
                 lblMessage.Text = "No session data available. Save your profile first.";
             }
         }
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }
 
