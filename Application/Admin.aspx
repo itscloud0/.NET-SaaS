@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Application.Admin" %>
 <%@ Register Src="~/DeleteConfirmation.ascx" TagPrefix="uc" TagName="DeleteConfirmation" %>
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 <!-- Developed by Chris Harris-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -124,6 +125,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <!-- Heading for the page, indicating it is for Admin to manage staff -->
             <h2>Admin - Manage Staff Members</h2>

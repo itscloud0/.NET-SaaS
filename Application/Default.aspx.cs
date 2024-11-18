@@ -14,6 +14,7 @@ namespace Application
             {
                 UpdateLoginStatus(); // Update login status display
             }
+
         }
 
         // Method to update the login status message based on session data

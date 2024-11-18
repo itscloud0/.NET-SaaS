@@ -38,7 +38,7 @@ namespace Application.Services
 
                 // Display the result from the service in a label
                 lblResult.Text = result;
-
+                activityLog.LogFlightBooking(timeText, depart, arrival);
                 // Close the client connection
                 client.Close();
             }

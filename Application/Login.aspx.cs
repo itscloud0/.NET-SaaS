@@ -4,6 +4,7 @@ using System.Web.UI;
 using System.Xml.Linq;
 using EncryptionDecryption;
 
+
 namespace Application
 {
     public partial class Login : Page
@@ -28,13 +29,17 @@ namespace Application
             {
                 // Valid staff credentials, redirect to Admin page
                 Session["StaffUser"] = username;
+                activityLog.LogLogin(username);
                 Response.Redirect("Admin.aspx");
+
             }
             else if (IsMemberValid(username, password))
             {
                 // Valid member credentials, redirect to Member page
                 Session["MemberUser"] = username;
+                activityLog.LogLogin(username);
                 Response.Redirect("MemberPage.aspx");
+
             }
             else
             {

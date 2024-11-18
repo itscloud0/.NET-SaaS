@@ -24,6 +24,15 @@ namespace Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// activityLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Application.ActivityLog activityLog;
+
+        /// <summary>
         /// GreetingControl1 control.
         /// </summary>
         /// <remarks>

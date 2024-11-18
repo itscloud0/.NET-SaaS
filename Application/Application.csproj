@@ -46,7 +46,46 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -81,6 +120,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\HotelBookingServiceReference\HotelBookingService1.disco" />
+    <None Include="Connected Services\BookFlightServiceReference\BookFlight1.disco" />
+    <Content Include="CurrencyExchange.aspx" />
+    <Content Include="ActivityLog.ascx" />
     <None Include="Connected Services\BookFlightServiceReference\BookFlight.disco" />
     <None Include="Connected Services\BookFlightServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BookFlightServiceReference\configuration.svcinfo" />
@@ -89,6 +131,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Default.aspx" />
+    <Content Include="ExchangeRateService.asmx" />
+    <Content Include="LocalComponents\ActivityLogPage.aspx" />
     <Content Include="LocalComponents\EncryptValues.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Admin.aspx" />
@@ -108,6 +152,7 @@
     <!-- XML Data Files -->
     <Content Include="Staff.xml" />
     <Content Include="Member.xml" />
+    <Content Include="LocalComponents\UserProfile.aspx" />
     <Content Include="TryGreeting.aspx" />
     <Content Include="UserProfile.aspx" />
     <!-- Web Configuration -->
@@ -150,6 +195,20 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <Compile Include="CurrencyExchange.aspx.cs">
+      <DependentUpon>CurrencyExchange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CurrencyExchange.aspx.designer.cs">
+      <DependentUpon>CurrencyExchange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityLog.ascx.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityLog.ascx.designer.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\BookFlightServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +220,17 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeRateService.asmx.cs">
+      <DependentUpon>ExchangeRateService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LocalComponents\ActivityLogPage.aspx.cs">
+      <DependentUpon>ActivityLogPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalComponents\ActivityLogPage.aspx.designer.cs">
+      <DependentUpon>ActivityLogPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="LocalComponents\EncryptValues.aspx.cs">
       <DependentUpon>EncryptValues.aspx</DependentUpon>
@@ -233,6 +303,7 @@
     </Compile>
     <!-- Assembly Info -->
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LocalComponents\UserProfile.aspx.cs">
     <Compile Include="TryGreeting.aspx.cs">
       <DependentUpon>TryGreeting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,7 +315,7 @@
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserProfile.aspx.designer.cs">
+    <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="GreetingControl.ascx.cs">

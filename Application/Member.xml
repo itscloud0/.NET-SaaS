@@ -1,4 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--Developed by Chris Harris-->
+
 <!--Stores Member Credentials-->
 <StaffMembers>
 	<Members>
@@ -6,10 +9,5 @@
 		<Password>password!</Password>
 		<!-- You may store this as a hashed value -->
 	</Members>
-	<!-- Additional staff members can be added here -->
-	<Members>
-		<Username>test</Username>
-		<Password>test</Password>
-		<!-- You may store this as a hashed value -->
-	</Members>
+	<!-- Additional members can be added here -->
 </StaffMembers>

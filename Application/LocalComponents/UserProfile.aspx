@@ -81,6 +81,9 @@
             
             <!-- Button to show the saved profile -->
             <asp:Button ID="btnShowProfile" runat="server" CssClass="button" Text="Show Profile" OnClick="btnShowProfile_Click" />
+            <br />
+            <!-- Back Button -->
+            <asp:Button ID="btnBack" runat="server" CssClass="button" Text="Back to Home" OnClick="btnBack_Click" />
         </div>
     </form>
 </body>

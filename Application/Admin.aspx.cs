@@ -184,6 +184,7 @@ namespace Application
         // Log out event handler
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
+            activityLog.LogLogout();
             Session.Clear(); // Clear session data
             Response.Redirect("Default.aspx"); // Redirect to default page
         }
