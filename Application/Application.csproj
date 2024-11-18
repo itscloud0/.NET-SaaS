@@ -153,7 +153,6 @@
     <Content Include="Staff.xml" />
     <Content Include="Member.xml" />
     <Content Include="TryGreeting.aspx" />
-    <Content Include="UserProfile.aspx" />
     <Content Include="LocalComponents\UserProfile.aspx" />
     <!-- Web Configuration -->
     <Content Include="Web.config" />
@@ -320,10 +319,6 @@
     </Compile>
     <Compile Include="TryGreeting.aspx.designer.cs">
       <DependentUpon>TryGreeting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserProfile.aspx.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LocalComponents\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
