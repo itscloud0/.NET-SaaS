@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <!--Developed by Chris Harris-->
-
 <!--Stores Member Credentials-->
 <StaffMembers>
-	<Members>
-		<Username>Test</Username>
-		<Password>password!</Password>
-		<!-- You may store this as a hashed value -->
-	</Members>
-	<!-- Additional members can be added here -->
+  <Members>
+    <Username>V2Px9ctx8ma2GAZJxjL+Sw==</Username>
+    <Password>5Kb6omgdcj4HNzRW33MubQ==</Password>
+  </Members>
+  <Members>
+    <Username>6cmHhYG1ZMcMhl56VwP0Kw==</Username>
+    <Password>6cmHhYG1ZMcMhl56VwP0Kw==</Password>
+  </Members>
+  <Members>
+    <Username>QSYJs7ZTewtASLBwLSqu0g==</Username>
+    <Password>6cmHhYG1ZMcMhl56VwP0Kw==</Password>
+  </Members>
+  <Members>
+    <Username>5wHw8Cfg/DTyiypzKzyDnw==</Username>
+    <Password>5Kb6omgdcj4HNzRW33MubQ==</Password>
+  </Members>
+  <Members>
+    <Username>TUCIZoYkEAQqUkYaiHZVxQ==</Username>
+    <Password>TUCIZoYkEAQqUkYaiHZVxQ==</Password>
+  </Members>
 </StaffMembers>

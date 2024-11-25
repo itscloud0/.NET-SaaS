@@ -66,5 +66,9 @@ namespace Application
                 Response.Redirect("Admin.aspx");
             }
         }
+        protected void GoToAccountCreationPage(object sender, EventArgs e)
+        {
+            Response.Redirect("AccountCreation.aspx");
+        }
     }
 }

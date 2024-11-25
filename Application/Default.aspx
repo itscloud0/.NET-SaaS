@@ -96,6 +96,7 @@
             <div>
                 <asp:Button ID="btnMemberPage" CssClass="button" runat="server" Text="Member Page" OnClick="GoToMemberPage" />
                 <asp:Button ID="btnStaffPage" CssClass="button" runat="server" Text="Staff Page" OnClick="GoToStaffPage" />
+                <asp:Button ID="btnAccountCreation" CssClass="button" runat="server" Text="Create Account" OnClick="GoToAccountCreationPage" />
             </div>
 
             <!-- Service Directory Table -->

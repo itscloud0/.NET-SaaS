@@ -112,6 +112,7 @@
   <ItemGroup>
     <!-- Core Pages -->
     <None Include="Connected Services\BookFlightServiceReference\BookFlight11.disco" />
+    <Content Include="AccountCreation.aspx" />
     <Content Include="GreetingControl.ascx" />
     <None Include="Connected Services\BookFlightServiceReference\BookFlight1.wsdl" />
     <None Include="Connected Services\BookFlightServiceReference\BookFlight2.xsd">
@@ -141,6 +142,7 @@
     <Content Include="LocalComponents\UserCount.aspx" />
     <Content Include="Global.asax" />
     <Content Include="DeleteConfirmation.ascx" />
+    <Content Include="MemberPage.aspx" />
     <!-- Services - Flight Booking -->
     <Content Include="Services\BookFlight.aspx" />
     <Content Include="Services\BookFlightService\BookFlight.svc" />
@@ -200,6 +202,13 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Core Pages -->
+    <Compile Include="AccountCreation.aspx.cs">
+      <DependentUpon>AccountCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountCreation.aspx.designer.cs">
+      <DependentUpon>AccountCreation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CurrencyExchange.aspx.cs">
       <DependentUpon>CurrencyExchange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,6 +286,13 @@
     </Compile>
     <Compile Include="DeleteConfirmation.ascx.designer.cs">
       <DependentUpon>DeleteConfirmation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPage.aspx.cs">
+      <DependentUpon>MemberPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPage.aspx.designer.cs">
+      <DependentUpon>MemberPage.aspx</DependentUpon>
     </Compile>
     <!-- Services - Flight Booking -->
     <Compile Include="Services\BookFlight.aspx.cs">

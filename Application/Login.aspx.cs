@@ -4,7 +4,6 @@ using System.Web.UI;
 using System.Xml.Linq;
 using EncryptionDecryption;
 
-
 namespace Application
 {
     public partial class Login : Page
@@ -31,7 +30,6 @@ namespace Application
                 Session["StaffUser"] = username;
                 activityLog.LogLogin(username);
                 Response.Redirect("Admin.aspx");
-
             }
             else if (IsMemberValid(username, password))
             {
@@ -39,7 +37,6 @@ namespace Application
                 Session["MemberUser"] = username;
                 activityLog.LogLogin(username);
                 Response.Redirect("MemberPage.aspx");
-
             }
             else
             {
