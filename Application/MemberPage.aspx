@@ -32,6 +32,15 @@
             color: #333;
         }
 
+        .input-field {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
         .button {
             display: block;
             width: 100%;
@@ -48,6 +57,19 @@
         .button:hover {
             background-color: #357ab8;
         }
+
+        .error-message, .success-message {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .success-message {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +80,17 @@
             
             <!-- Welcome Message -->
             <asp:Label ID="lblMemberWelcome" runat="server" CssClass="welcome-message" Text="Welcome, Member!" />
-            
+
+            <!-- Error/Success Messages -->
+            <asp:Label ID="lblMessage" runat="server" CssClass="error-message" Text="" />
+
+            <!-- Change Password Section -->
+            <asp:TextBox ID="txtNewPassword" runat="server" CssClass="input-field" TextMode="Password" Placeholder="Enter New Password" />
+            <asp:Button ID="btnChangePassword" runat="server" CssClass="button" Text="Change Password" OnClick="btnChangePassword_Click" />
+
+            <!-- Delete Account Section -->
+            <asp:Button ID="btnDeleteAccount" runat="server" CssClass="button" Text="Delete Account" OnClick="btnDeleteAccount_Click" />
+
             <!-- Logout Button -->
             <asp:Button ID="btnLogout" runat="server" CssClass="button" Text="Logout" OnClick="btnLogout_Click" />
             

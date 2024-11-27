@@ -10,7 +10,17 @@ namespace Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Any additional setup code can go here
+            // Redirect to the Member page if a Member is already logged in
+            if (Session["MemberUser"] != null)
+            {
+                Response.Redirect("MemberPage.aspx");
+            }
+
+            // Redirect to the Admin page if a Staff member is already logged in
+            if (Session["StaffUser"] != null)
+            {
+                Response.Redirect("Admin.aspx");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
