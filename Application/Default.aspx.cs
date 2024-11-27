@@ -21,9 +21,9 @@ namespace Application
         private void UpdateLoginStatus()
         {
             // Check if a regular user is logged in
-            if (Session["LoggedInUser"] != null)
+            if (Session["MemberUser"] != null)
             {
-                lblStatus.Text = $"Logged in as: {Session["LoggedInUser"]}"; // Display logged in username
+                lblStatus.Text = $"Logged in as: {Session["MemberUser"]}"; // Display logged in username
             }
             // Check if a staff user is logged in
             else if (Session["StaffUser"] != null)

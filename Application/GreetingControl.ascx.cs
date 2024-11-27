@@ -33,7 +33,7 @@ namespace Application
                 {
                     greeting = "Good Morning";
                 }
-                else if (currentHour < 18)
+                else if (currentHour < 17) // changed from 18 to 17 due to the time of year
                 {
                     greeting = "Good Afternoon";
                 }
