@@ -193,6 +193,7 @@
     <!-- Configuration Files -->
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FINAL.pubxml" />
+    <None Include="Properties\PublishProfiles\FINAL_29-11-2024.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
