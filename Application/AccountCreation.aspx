@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AccountCreation.aspx.cs" Inherits="Application.AccountCreation" %>
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 <!DOCTYPE html>
+
+<!--Developed by Chris Harris-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Create Member Account</title>
@@ -54,6 +57,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <h2>Create Account</h2>
 

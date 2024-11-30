@@ -79,6 +79,7 @@ namespace Application
 
                 // Clear the form and show success message
                 lblMessage.Text = "Staff member added successfully!";
+                activityLog.LogAddStaff(username);
                 txtAddUsername.Text = "";
                 txtAddPassword.Text = "";
                 txtCaptchaInput.Text = "";
@@ -107,6 +108,7 @@ namespace Application
                     staffToDelete.Remove();
                     staffDoc.Save(Server.MapPath("~/Staff.xml"));
                     lblMessage.Text = $"Staff member '{usernameToDelete}' was deleted successfully.";
+                    activityLog.LogStaffDeletion(usernameToDelete); // Log the deletion
                 }
                 else
                 {

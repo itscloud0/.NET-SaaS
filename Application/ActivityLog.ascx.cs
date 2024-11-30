@@ -43,6 +43,40 @@ namespace Application
             AddActivity(activity);
         }
 
+        // Track Account Creation
+        public void LogAccCreation(string username)
+        {
+            string activity = $"Created an account {username}";
+            AddActivity(activity);
+        }
+
+        // Track Member Deletion Activity
+        public void LogAccDeletion()
+        {
+            string activity = $"Deleted the personal account";
+            AddActivity(activity);
+        }
+
+        // Track Staff Deletion Activity
+        public void LogStaffDeletion(string username)
+        {
+            string activity = $"Deleted the {username} account";
+            AddActivity(activity);
+        }
+
+        //Track adding staff activity
+        public void LogAddStaff(string username)
+        {
+            string activity = $"Added {username} as Staff";
+            AddActivity(activity);
+        }
+
+        // Track Change Password activity
+        public void LogChangePassword()
+        {
+            string activity = $"Changed password";
+            AddActivity(activity);
+        }
         // Track Logout activity
         public void LogLogout()
         {

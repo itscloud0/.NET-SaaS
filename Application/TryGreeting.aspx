@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TryGreeting.aspx.cs" Inherits="Application.TryGreeting" %>
 <%@ Register Src="GreetingControl.ascx" TagName="GreetingControl" TagPrefix="uc" %>
 <!DOCTYPE html>
+<!-- Developed by Cole Eastman-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Try Greeting Control</title>

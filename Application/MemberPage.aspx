@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MemberPage.aspx.cs" Inherits="Application.MemberPage" %>
+<%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 <!DOCTYPE html>
+<!--Developed by Cole Eastman-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Member Portal</title>
@@ -74,6 +76,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:ActivityLog ID="activityLog" runat="server" Visible="false"/>
         <div class="container">
             <!-- Page Title -->
             <h2>Member Portal</h2>
