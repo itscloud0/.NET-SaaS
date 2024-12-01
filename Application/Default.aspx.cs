@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace Application
 {
-    // Developed by Ilia Sorokin, Chris Harris
+    // Developed by Ilia Sorokin, Chris Harris, Cole Eastman
     public partial class Default : Page
     {
         // Page_Load method, triggers when the page is loaded

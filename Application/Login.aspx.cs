@@ -4,6 +4,7 @@ using System.Web.UI;
 using System.Xml.Linq;
 using EncryptionDecryption;
 
+//Developed by Chris Harris
 namespace Application
 {
     public partial class Login : Page

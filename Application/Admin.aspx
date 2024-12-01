@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Application.Admin" %>
 <%@ Register Src="~/DeleteConfirmation.ascx" TagPrefix="uc" TagName="DeleteConfirmation" %>
 <%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
-<!-- Developed by Chris Harris-->
+<!--Developed by Chris Harris, Ilia Sorokin-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using EncryptionDecryption;
 
-//Developed by Cole Eastman
+//Developed by Cole Eastman, Ilia Sorokin
 namespace Application
 {
     public partial class MemberPage : Page

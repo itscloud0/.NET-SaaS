@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MemberPage.aspx.cs" Inherits="Application.MemberPage" %>
 <%@ Register Src="~/ActivityLog.ascx" TagPrefix="uc" TagName="ActivityLog" %>
 <!DOCTYPE html>
-<!--Developed by Cole Eastman-->
+<!--Developed by Cole Eastman, Ilia Sorokin-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Member Portal</title>

@@ -10,7 +10,7 @@ using EncryptionDecryption;
 
 namespace Application
 {
-    // Developed by Chris Harris and Ilia Sorokin
+    // Developed by Chris Harris, Ilia Sorokin
     public partial class Admin : Page
     {
         private const string CaptchaSessionKey = "CaptchaCode"; // Constant to store CAPTCHA session key
